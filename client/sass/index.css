@@ -1,0 +1,20 @@
+.video-container {
+  margin: 10px;
+  border: 2px black solid; }
+
+.pagesCont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+#header {
+  text-align: center;
+  border: #6c6c6c solid 2px;
+  height: 40px;
+  padding: 10px; }
+  #header #header-search-form {
+    float: right; }
+  #header #header-submit-form {
+    float: left; }
+
+/*# sourceMappingURL=index.css.map */

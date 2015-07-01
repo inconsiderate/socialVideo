@@ -1,0 +1,11 @@
+{
+    "awsBucket": "underoo",
+    "AWSAccessKeyId": "AKIAJZ6I7L6MEP53EYPA",
+    "AWSSecretAccessKey": "eVH65raFVppnZ8Jos9uXkKaY6ebL4iDtdeJsnRc5",
+    "public": {
+        "awsBucketUrl": "https://my-meteor-example.s3.amazonaws.com",
+        "environment": "dev"
+    }
+}
+
+

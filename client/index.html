@@ -1,0 +1,53 @@
+<head>
+    <title>SocialVideo</title>
+</head>
+
+<body>
+
+    <div id="header">
+        <div id="header-search-form">
+            {{> searchForm}}
+        </div>
+        <div id="header-submit-form">
+            {{> submitVideo}}
+        </div>
+        <div id="login-container">
+            {{> loginButtons }}
+        </div>
+    </div>
+
+    <div class="all-videos">
+        {{> items}}
+    </div>
+</body>
+
+<template name="searchForm">
+    <div>Search for something: </div>
+    <form class="search-field-form">
+        <input name="filterField" class="search-field" type="text" placeholder="Enter Search Terms" required>
+    </form>
+</template>
+
+<template name="submitVideo">
+    <div>Submit a new video: </div>
+    <form class="submit-video-form">
+        <input name="title" class="title-field" type="text" placeholder="Video Title" required>
+        <input name="description" class="description-field" type="text" placeholder="Video Description" required>
+        <button type="submit">SUBMIT</button>
+    </form>
+</template>
+
+<template name="items">
+    {{> pages}}
+</template>
+
+<template name="item">
+    <div class="video-container">
+        <video id="{{id}}" class="video-js vjs-default-skin"
+        controls preload="auto" width="640" height="264"
+        data-setup='{"example_option":true}'>
+            <source src= "{{path}}" type='video/mp4' />
+            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+    </div>
+</template>
