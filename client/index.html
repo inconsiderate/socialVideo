@@ -8,9 +8,11 @@
         <div id="header-search-form">
             {{> searchForm}}
         </div>
+        {{#if currentUser}}
         <div id="header-submit-form">
             {{> submitVideo}}
         </div>
+        {{/if}}
         <div id="login-container">
             {{> loginButtons }}
         </div>

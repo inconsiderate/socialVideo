@@ -4,20 +4,13 @@ if (Meteor.isClient) {
         "submit .search-field-form": function (event) {
             var searchFilter = event.target.filterField.value;
             console.log(searchFilter);
-            if (searchFilter == 'test1') {
-                Pages.set({
-                    sort: {
-                        title: -1
-                    }
-                });
-            }
-            if (searchFilter == 'test2') {
-                Pages.set({
-                    sort: {
-                        title: 1
-                    }
-                });
-            }
+
+            Pages.set({
+                filters: {
+                    title: searchFilter
+                }
+            });
+
             event.target.filterField.value = "";
             event.preventDefault();
             return false;
@@ -58,4 +51,8 @@ uploader.send(document.getElementById('input').files[0], function (error, downlo
     else {
         Meteor.users.update(Meteor.userId(), {$push: {"profile.files": downloadUrl}});
     }
+});
+
+Accounts.ui.config({
+    passwordSignupFields: "USERNAME_ONLY"
 });
