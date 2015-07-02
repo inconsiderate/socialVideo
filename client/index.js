@@ -5,7 +5,7 @@ if (Meteor.isClient) {
             var searchFilter = event.target.filterField.value;
             Pages.set({
                 filters: {
-                    title: searchFilter
+                    $text: { $search: searchFilter }
                 }
             });
             event.target.filterField.value = "";
