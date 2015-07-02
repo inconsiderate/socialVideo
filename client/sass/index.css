@@ -1,19 +1,9 @@
 .video-container {
-  margin-bottom: 5px; }
+  margin-top: 15px; }
 
 .pagesCont {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; }
-
-#header {
-  text-align: center;
-  border: #6c6c6c solid 2px;
-  height: 65px;
-  padding: 10px; }
-  #header #header-search-form {
-    float: right; }
-  #header #header-submit-form {
-    float: left; }
 
 /*# sourceMappingURL=index.css.map */

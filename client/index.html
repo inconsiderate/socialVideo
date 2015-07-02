@@ -1,51 +1,55 @@
 <head>
     <title>SocialVideo</title>
 </head>
-
 <body>
 
-<nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-        <li class="name">
-            <h1><a href="#">My Site</a></h1>
-        </li>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
+    <div class="sticky">
+        <nav class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+            </ul>
 
-    <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-            <li class="active"><a href="#">Right Button Active</a></li>
-            <li class="has-dropdown">
-                <a href="#">Right Button Dropdown</a>
-                <ul class="dropdown">
-                    <li><a href="#">First link in dropdown</a></li>
-                    <li class="active"><a href="#">Active link in dropdown</a></li>
+            <section class="top-bar-section">
+                <ul class="left">
+                    <div id="login-container" class="small-10 large-4 columns">
+                        {{> loginButtons }}
+                    </div>
+                    {{#if currentUser}}
+                        <li class="has-dropdown">
+                            <a href="#">Submit New Video</a>
+                            <ul class="dropdown">
+                                {{> submitVideo }}
+                            </ul>
+                        </li>
+
+                    {{/if}}
                 </ul>
-            </li>
-        </ul>
-
-        <!-- Left Nav Section -->
-        <ul class="left">
-            <li><a href="#">Left Nav Button</a></li>
-        </ul>
-    </section>
-</nav>
-
-    <div id="header" class="row">
-        <div id="header-search-form" class="small-2 large-4 columns">
-            {{> searchForm}}
-        </div>
-        {{#if currentUser}}
-        <div id="header-submit-form" class="small-4 large-4 columns">
-            {{> submitVideo}}
-        </div>
-        {{/if}}
-        <div id="login-container" class="small-10 large-4 columns">
-            {{> loginButtons }}
-        </div>
-    </div> <!-- end header -->
+                <ul class="right">
+                    <li class="has-form">
+                        <div class="row collapse">
+                            <div class="large-9 small-10 columns">
+                                {{>searchForm}}
+                            </div>
+                            <div class="large-3 small-2 columns">
+                                <a href="#" class="button expand">Search</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">Filter by Genre</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Filter by V</a></li>
+                            <li><a href="#">Filter by W</a></li>
+                            <li><a href="#">Filter by X</a></li>
+                            <li><a href="#">Filter by Y</a></li>
+                            <li><a href="#">Filter by Z</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+    </div>
 
 
     <div class="all-videos">
@@ -54,19 +58,36 @@
 </body>
 
 <template name="searchForm">
-    <div>Search for something: </div>
     <form class="search-field-form">
         <input name="filterField" class="search-field" type="text" placeholder="Enter Search Terms" required>
     </form>
 </template>
 
 <template name="submitVideo">
-    <div>Submit a new video: </div>
     <form class="submit-video-form">
-        <input name="title" class="title-field" type="text" placeholder="Video Title" required>
-        <input name="description" class="description-field" type="text" placeholder="Video Description" required>
-        <input name="keywords" class="keywords-field" type="text" placeholder="Video Keywords" required>
+        <div class="row">
+            <div class="large-12 columns">
+                <label>Video Title
+                    <input name="title" class="title-field" type="text" placeholder="Video Title" required /></label>
+</div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <label>Video Description
+                    <input name="description" class="description-field" type="text" placeholder="Video Description" required /></label>
+                    </div>
+            </div>
+
+        <div class="row">
+            <div class="large-12 columns">
+                <label>Video Keywords
+                    <input name="keywords" class="keywords-field" type="text" placeholder="Video Keywords" required/>
+                </label>
+            </div>
+        </div>
+
         <button type="submit">SUBMIT</button>
+
     </form>
 </template>
 
@@ -83,3 +104,4 @@
         </video>
     </div>
 </template>
+

@@ -1,7 +1,7 @@
 @import '_mixins';
 
 .video-container {
-    margin-bottom: 5px;
+    margin-top: 15px;
 }
 
 .pagesCont {
@@ -9,17 +9,4 @@
     flex-wrap: wrap;
     justify-content: center;
 
-}
-
-#header {
-    text-align: center;
-    border: #6c6c6c solid 2px;
-    height: 65px;
-    padding: 10px;
-    #header-search-form {
-        float: right;
-    }
-    #header-submit-form {
-        float: left;
-    }
 }
