@@ -19,7 +19,7 @@
     </div>
 
     <div class="all-videos">
-        {{> items}}
+        {{> videos}}
     </div>
 </body>
 
@@ -39,11 +39,11 @@
     </form>
 </template>
 
-<template name="items">
+<template name="videos">
     {{> pages}}
 </template>
 
-<template name="item">
+<template name="video">
     <div class="video-container">
         <video id="{{id}}" class="video-js vjs-default-skin"
         controls preload="auto" width="640" height="264"

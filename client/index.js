@@ -3,14 +3,11 @@ if (Meteor.isClient) {
     Template.searchForm.events({
         "submit .search-field-form": function (event) {
             var searchFilter = event.target.filterField.value;
-            console.log(searchFilter);
-
             Pages.set({
                 filters: {
                     title: searchFilter
                 }
             });
-
             event.target.filterField.value = "";
             event.preventDefault();
             return false;
@@ -25,19 +22,18 @@ if (Meteor.isClient) {
             Videos.insert({
                 title: title,
                 path: path,
-                description: description
-                //owner: Meteor.userId(),
-                //username: Meteor.user().username,
-                //createdAt: new Date() // current time
+                description: description,
+                owner: Meteor.userId(),
+                username: Meteor.user().username,
+                createdAt: new Date() // current time
             });
             event.target.title.value = "";
             event.target.path.value = "";
-            event.target.description.value = ""
+            event.target.description.value = "";
             event.preventDefault();
             return false;
         }
     })
-
 }
 
 var uploader = new Slingshot.Upload("myFileUploads");
