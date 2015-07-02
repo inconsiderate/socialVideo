@@ -1,8 +1,7 @@
-
+@import '_mixins';
 
 .video-container {
-    margin: 10px;
-    border: 2px black solid;
+    margin-bottom: 5px;
 }
 
 .pagesCont {
@@ -15,7 +14,7 @@
 #header {
     text-align: center;
     border: #6c6c6c solid 2px;
-    height: 40px;
+    height: 65px;
     padding: 10px;
     #header-search-form {
         float: right;

@@ -4,19 +4,49 @@
 
 <body>
 
-    <div id="header">
-        <div id="header-search-form">
+<nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="#">My Site</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="active"><a href="#">Right Button Active</a></li>
+            <li class="has-dropdown">
+                <a href="#">Right Button Dropdown</a>
+                <ul class="dropdown">
+                    <li><a href="#">First link in dropdown</a></li>
+                    <li class="active"><a href="#">Active link in dropdown</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li><a href="#">Left Nav Button</a></li>
+        </ul>
+    </section>
+</nav>
+
+    <div id="header" class="row">
+        <div id="header-search-form" class="small-2 large-4 columns">
             {{> searchForm}}
         </div>
         {{#if currentUser}}
-        <div id="header-submit-form">
+        <div id="header-submit-form" class="small-4 large-4 columns">
             {{> submitVideo}}
         </div>
         {{/if}}
-        <div id="login-container">
+        <div id="login-container" class="small-10 large-4 columns">
             {{> loginButtons }}
         </div>
-    </div>
+    </div> <!-- end header -->
+
 
     <div class="all-videos">
         {{> videos}}
@@ -35,6 +65,7 @@
     <form class="submit-video-form">
         <input name="title" class="title-field" type="text" placeholder="Video Title" required>
         <input name="description" class="description-field" type="text" placeholder="Video Description" required>
+        <input name="keywords" class="keywords-field" type="text" placeholder="Video Keywords" required>
         <button type="submit">SUBMIT</button>
     </form>
 </template>
@@ -44,10 +75,9 @@
 </template>
 
 <template name="video">
-    <div class="video-container">
+    <div class="video-container small-12 medium-3 column">
         <video id="{{id}}" class="video-js vjs-default-skin"
-        controls preload="auto" width="640" height="264"
-        data-setup='{"example_option":true}'>
+        controls preload="metadata" height="100%" width="100%">
             <source src= "{{path}}" type='video/mp4' />
             <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
         </video>

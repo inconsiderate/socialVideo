@@ -19,16 +19,17 @@ if (Meteor.isClient) {
             var title = event.target.title.value;
             var description = event.target.description.value;
             var path = event.target.path.value;
+            var keywords = event.target.keywords.value;
             Videos.insert({
                 title: title,
                 path: path,
+                keywords: keywords,
                 description: description,
-                owner: Meteor.userId(),
-                username: Meteor.user().username,
                 createdAt: new Date() // current time
             });
             event.target.title.value = "";
             event.target.path.value = "";
+            event.target.keywords.value = "";
             event.target.description.value = "";
             event.preventDefault();
             return false;
