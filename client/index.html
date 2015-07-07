@@ -1,93 +1,84 @@
 <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>SocialVideo</title>
 </head>
 <body>
 
-    <div class="sticky">
-        <nav class="top-bar" data-topbar role="navigation">
-            <ul class="title-area">
-                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">genre one</a></li>
+    <li><a href="#!">genre two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">genre three</a></li>
+    <li><a href="#!">genre four</a></li>
+    <li><a href="#!">genre five</a></li>
+    <li><a href="#!">genre six</a></li>
+</ul>
+
+
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">social video</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+            <ul class="left hide-on-med-and-down">
+                {{>searchForm}}
             </ul>
 
-            <section class="top-bar-section">
-                <ul class="left">
-                    <div id="login-container" class="small-10 large-4 columns">
-                        {{> loginButtons }}
-                    </div>
-                    {{#if currentUser}}
-                        <li class="has-dropdown">
-                            <a href="#">Submit New Video</a>
-                            <ul class="dropdown">
-                                {{> submitVideo }}
-                            </ul>
-                        </li>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="sass.html">About Us</a></li>
+                <li><a href="badges.html">Comments</a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Genres<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
 
-                    {{/if}}
-                </ul>
-                <ul class="right">
-                    <li class="has-form">
-                        <div class="row collapse">
-                            <div class="large-9 small-10 columns">
-                                {{>searchForm}}
-                            </div>
-                            <div class="large-3 small-2 columns">
-                                <a href="#" class="button expand">Search</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="#">Filter by Genre</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Filter by V</a></li>
-                            <li><a href="#">Filter by W</a></li>
-                            <li><a href="#">Filter by X</a></li>
-                            <li><a href="#">Filter by Y</a></li>
-                            <li><a href="#">Filter by Z</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-        </nav>
-    </div>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="sass.html">About Us</a></li>
+                <li><a href="badges.html">Comments</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
 
-
+<div class="container">
     <div class="all-videos">
         {{> videos}}
     </div>
+</div>
 </body>
 
 <template name="searchForm">
     <form class="search-field-form">
-        <input name="filterField" class="search-field" type="text" placeholder="Enter Search Terms" required>
+        <div class="input-field">
+            <input id="search" type="search" placeholder="Enter search terms" required>
+            <label for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+        </div>
     </form>
 </template>
 
 <template name="submitVideo">
     <form class="submit-video-form">
         <div class="row">
-            <div class="large-12 columns">
+            <div class="col l12">
                 <label>Video Title
-                    <input name="title" class="title-field" type="text" placeholder="Video Title" required /></label>
-</div>
+                    <input name="title" class="title-field" type="text" placeholder="Video Title" required/></label>
+            </div>
         </div>
         <div class="row">
-            <div class="large-12 columns">
+            <div class="col l12">
                 <label>Video Description
-                    <input name="description" class="description-field" type="text" placeholder="Video Description" required /></label>
-                    </div>
+                    <input name="description" class="description-field" type="text" placeholder="Video Description"
+                           required/></label>
             </div>
-
+        </div>
         <div class="row">
-            <div class="large-12 columns">
+            <div class="col s12">
                 <label>Video Keywords
                     <input name="keywords" class="keywords-field" type="text" placeholder="Video Keywords" required/>
                 </label>
             </div>
         </div>
-
         <button type="submit">SUBMIT</button>
-
     </form>
 </template>
 
@@ -95,13 +86,31 @@
     {{> pages}}
 </template>
 
-<template name="video">
-    <div class="video-container small-12 medium-3 column">
-        <video id="{{id}}" class="video-js vjs-default-skin"
-        controls preload="metadata" height="100%" width="100%">
-            <source src= "{{path}}" type='video/mp4' />
-            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-        </video>
+<template name="singleVideo">
+    <div class="card col s4">
+
+        <div class="card-image waves-effect waves-block waves-light">
+            <video id="{{id}}" class="video-js vjs-default-skin"
+                   controls preload="metadata" height="100%" width="100%">
+                <source src="{{path}}"/>
+                <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser
+                    that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+            </video>
+        </div>
+
+        <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+        </div>
+
+        <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons">close</i></span>
+            <strong>TITLE</strong>{{title}}<br/>
+            <strong>DESCR</strong>{{description}}<br/>
+            <strong>keywords</strong>{{keywords}}<br/>
+            <strong>uploaded by:</strong>{{username}}
+        </div>
+
     </div>
 </template>
 

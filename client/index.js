@@ -25,7 +25,9 @@ if (Meteor.isClient) {
                 path: path,
                 keywords: keywords,
                 description: description,
-                createdAt: new Date() // current time
+                createdAt: new Date(),
+                owner: Meteor.userId(),
+                username: Meteor.user().username
             });
             event.target.title.value = "";
             event.target.path.value = "";

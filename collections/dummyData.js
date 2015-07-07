@@ -8,30 +8,6 @@ if (Meteor.isServer && Videos.find().count() < N) {
     for (i=0; i < N; i++ ) {
         Videos.insert({
             id: idnum,
-            path: 'videos/3gp_sample.3gp',
-            title: '3gp sample',
-            keywords: '3gp sample test1',
-            description: '3gp sample test1 this is the description',
-            createdAt: new Date(),
-            username: 'trevor'
-        });
-        idnum++;
-    }
-    for (i=0; i < N; i++ ) {
-        Videos.insert({
-            id: idnum,
-            path: 'videos/flv_sample.flv',
-            title: 'flv sample',
-            keywords: 'flv sample test2',
-            description: 'flv sample test2 this is the description',
-            createdAt: new Date(),
-            username: 'sara'
-        });
-        idnum++;
-    }
-    for (i=0; i < N; i++ ) {
-        Videos.insert({
-            id: idnum,
             path: 'videos/jellyfish.mkv',
             title: 'jellyfish mkv',
             keywords: 'jellyfish mkv sample test2',
