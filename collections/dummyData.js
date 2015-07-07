@@ -21,7 +21,7 @@ if (Meteor.isServer && Videos.find().count() < N) {
         Videos.insert({
             id: idnum,
             path: 'videos/medium_mpeg4_sample.mp4',
-            title: 'medium mpeg4 sample',
+            title: 'medium mpeg4 sample long title lolwut too long',
             keywords: 'medium mpeg4 mpg4 sample mp4',
             description: 'here is some description mp4',
             createdAt: new Date(),
