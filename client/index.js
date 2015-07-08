@@ -1,8 +1,7 @@
 if (Meteor.isClient) {
 
     Template.singleVideo.events({
-        "click .card-image": function(event) {
-            console.log('lolwut');
+        "click .card-image": function() {
             $('#videoSingleModal').openModal();
         }
     });
@@ -74,13 +73,12 @@ if (Meteor.isClient) {
                 console.log(r);
             });
         }
-    })
+    });
 
     Template.s3_tester.helpers({
         "files": function(){
             return S3.collection.find();
         }
     })
-
 
 }
