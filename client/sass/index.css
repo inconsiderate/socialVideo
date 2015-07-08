@@ -3,4 +3,10 @@
   flex-wrap: wrap;
   justify-content: center; }
 
+#user-panel-button {
+  padding-right: 10px; }
+
+.tabs .indicator {
+  background-color: white; }
+
 /*# sourceMappingURL=index.css.map */

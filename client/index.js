@@ -2,13 +2,13 @@ if (Meteor.isClient) {
 
     Template.searchForm.events({
         "submit .search-field-form": function (event) {
-            var searchFilter = event.target.filterField.value;
+            var searchFilter = event.target.searchField.value;
             Pages.set({
                 filters: {
                     $text: { $search: searchFilter }
                 }
             });
-            event.target.filterField.value = "";
+            event.target.searchField.value = "";
             event.preventDefault();
             return false;
         }
@@ -36,7 +36,23 @@ if (Meteor.isClient) {
             event.preventDefault();
             return false;
         }
-    })
+    });
+
+    $(document).ready(function(){
+        $('#user-panel-button').click(function() {
+            $('ul.tabs').tabs();
+            $('.dropdown-button').dropdown({
+                    inDuration: 800,
+                    outDuration: 225,
+                    constrain_width: false, // Does not change width of dropdown to that of the activator
+                    hover: true, // Activate on hover
+                    gutter: 0, // Spacing from edge
+                    belowOrigin: true // Displays dropdown below the button
+                }
+            );
+        });
+        $('#user-panel-button').leanModal();
+    });
 }
 
 var uploader = new Slingshot.Upload("myFileUploads");
@@ -50,8 +66,4 @@ uploader.send(document.getElementById('input').files[0], function (error, downlo
     else {
         Meteor.users.update(Meteor.userId(), {$push: {"profile.files": downloadUrl}});
     }
-});
-
-Accounts.ui.config({
-    passwordSignupFields: "USERNAME_ONLY"
 });
