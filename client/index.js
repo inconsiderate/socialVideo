@@ -1,5 +1,12 @@
 if (Meteor.isClient) {
 
+    Template.singleVideo.events({
+        "click .card-image": function(event) {
+            console.log('lolwut');
+            $('#videoSingleModal').openModal();
+        }
+    });
+
     Template.searchForm.events({
         "submit .search-field-form": function (event) {
             var searchFilter = event.target.searchField.value;
