@@ -1,3 +1,5 @@
 
 
 Videos._ensureIndex( { "$**": "text" } );
+
+

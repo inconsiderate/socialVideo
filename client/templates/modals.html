@@ -1,0 +1,64 @@
+<template name="userControlModal">
+    <div id="user-account-modal" class="modal indigo lighten-5">
+        <div class="modal-content">
+            {{#if currentUser}}
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="tabs cyan">
+                            <li class="tab col s3"><a class="white-text active" href="#test1">My Account</a></li>
+                            <li class="tab col s3"><a class="white-text" href="#test2">Friends</a></li>
+                            <li class="tab col s3"><a class="white-text" href="#test3">Something Else</a></li>
+                            <li class="tab col s3"><a class="white-text" href="#test4">Submit Video</a></li>
+                        </ul>
+                    </div>
+                    <div id="test1" class="col s12">{{> userProfile}}</div>
+                    <div id="test2" class="col s12">{{> userFriends}}</div>
+                    <div id="test3" class="col s12">this is a thing or whatever!</div>
+                    <div id="test4" class="col s12">{{> submitNewVideo}}</div>
+                </div>
+            {{else}}
+                {{> atForm}}
+            {{/if}}
+        </div>
+        <div class="modal-footer cyan">
+            {{> atNavButton}}
+        </div>
+    </div>
+</template>
+
+
+
+
+<template name="videoModal">
+    <div id="videoSingleModal" class="modal">
+        <div class="modal-content row">
+            <div class="col s12">
+                <video id="{{id}}" class="video-js vjs-default-skin"
+                       controls preload="metadata" height="100%" width="100%">
+                    <source src="{{path}}"/>
+                    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web
+                        browser
+                        that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                </video>
+            </div>
+            <div class="col s12">
+                <p>COMMENTS</p>
+                <ul>
+                    <li>this is a comment</li>
+                    <li>this is another comment</li>
+                    <li>yet another comment</li>
+                    <li>this is a comment</li>
+                    <li>this is another comment</li>
+                    <li>yet another comment</li>
+                    <li>this is a comment</li>
+                    <li>this is another comment</li>
+                    <li>yet another comment</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+</template>

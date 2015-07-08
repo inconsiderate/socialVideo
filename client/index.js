@@ -39,7 +39,10 @@ if (Meteor.isClient) {
     });
 
     $(document).ready(function(){
-        $('#user-panel-button').click(function() {
+        $('.modal-button').leanModal();
+        $(".button-collapse").sideNav();
+        $('.modal-button').click(function() {
+            console.log('lolwut');
             $('ul.tabs').tabs();
             $('.dropdown-button').dropdown({
                     inDuration: 800,
@@ -51,6 +54,26 @@ if (Meteor.isClient) {
                 }
             );
         });
-        $('#user-panel-button').leanModal();
     });
+
+    Template.s3_tester.events({
+        "click button.upload": function(){
+            var files = $("input.file_bag")[0].files
+
+            S3.upload({
+                files:files,
+                path:"subfolder"
+            },function(e,r){
+                console.log(r);
+            });
+        }
+    })
+
+    Template.s3_tester.helpers({
+        "files": function(){
+            return S3.collection.find();
+        }
+    })
+
+
 }
