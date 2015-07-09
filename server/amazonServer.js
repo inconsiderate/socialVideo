@@ -3,5 +3,3 @@ S3.config = {
     secret: Meteor.settings.AWSSecretAccessKey,
     bucket: Meteor.settings.S3Bucket
 };
-
-
