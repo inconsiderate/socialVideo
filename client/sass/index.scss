@@ -1,5 +1,9 @@
 @import '_mixins';
 
+body {
+    background-color: #ddd;
+}
+
 .pagesCont {
     display: flex;
     flex-wrap: wrap;
@@ -16,4 +20,9 @@
 
 #right-navbar {
     margin-right: 10px;
+}
+
+ul.submenu-tabs {
+    top: -12px;
+    height: 40px;
 }

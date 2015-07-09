@@ -4,27 +4,4 @@
 </head>
 <body>
 
-<header>
-    {{> navbar}}
-</header>
-
-<!--{{> s3_tester}}-->
-
-{{> userControlModal}}
-{{> videoModal}}
-
-<div class="container">
-    <div class="all-videos">
-        {{> videos}}
-    </div>
-</div>
 </body>
-
-<template name="s3_tester">
-    <input type="file" class="file_bag">
-    <button class="upload">Upload</button>
-
-    {{#each files}}
-        <p>{{percent_uploaded}}</p>
-    {{/each}}
-</template>

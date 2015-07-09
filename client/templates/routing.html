@@ -1,0 +1,18 @@
+<template name="mainLayout">
+
+    <header>
+        {{> navbar}}
+
+    </header>
+    {{> userControlModal}}
+    {{> videoModal}}
+
+    <div class="container">
+        {{>navbar2}}
+    </div>
+
+    <div class="container">
+        {{> yield "mainContent"}}
+    </div>
+
+</template>

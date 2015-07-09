@@ -1,7 +1,6 @@
 <template name="submitNewVideo">
     <div class="row">
-        <form class="col s12">
-
+        <form class="col s12 submit-video-form">
             <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">view_list</i>
@@ -25,12 +24,18 @@
             <div class="row">
                 <div class="file-field input-field">
                     <i class="material-icons prefix">movie</i>
-                    <input class="file-path validate" type="text"/>
+                    <input type="file" id="file_bag">
+                    <label for="file_bag">Choose file</label>
+                    {{#each files}}
+                        <p>{{percent_uploaded}}</p>
+                    {{/each}}
+                </div>
+            </div>
 
-                    <div class="btn">
-                        <span>File</span>
-                        <input type="file"/>
-                    </div>
+            <div class="row">
+                <div class="input-field col s6">
+
+                    <button class="upload" type="submit">SUBMIT</button>
                 </div>
             </div>
 
@@ -39,51 +44,27 @@
                     <input type="checkbox" id="genre1"/>
                     <label for="genre1">This is a generic Genre #1</label>
                 </p>
+
                 <p>
                     <input type="checkbox" id="genre2"/>
                     <label for="genre2">Genre2</label>
                 </p>
+
                 <p>
                     <input type="checkbox" id="genre3"/>
                     <label for="genre3">Genre3</label>
                 </p>
+
                 <p>
                     <input type="checkbox" id="genre4"/>
                     <label for="genre4">Genre4</label>
                 </p>
+
                 <p>
                     <input type="checkbox" id="genre5"/>
                     <label for="genre5">Genre5</label>
                 </p>
             </ul>
-
         </form>
     </div>
-</template>
-
-
-<template name="submitVideo">
-    <form class="submit-video-form">
-        <div class="row">
-            <div class="col l12">
-                <label>Video Title
-                    <input name="title" class="title-field" type="text" placeholder="Video Title" required/></label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col l12">
-                <label>Video Description
-                    <input name="description" class="description-field" type="text" placeholder="Video Description"
-                           required/></label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <label>Video Keywords
-                    <input name="keywords" class="keywords-field" type="text" placeholder="Video Keywords" required/>
-                </label>
-            </div>
-        </div>
-        <button type="submit">SUBMIT</button>
-    </form>
 </template>

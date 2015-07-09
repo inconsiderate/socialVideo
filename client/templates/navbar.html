@@ -2,7 +2,7 @@
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper cyan">
-                <a href="#" class="brand-logo center hide-on-med-and-down">social video</a>
+                <a href="/" class="brand-logo center hide-on-med-and-down">social video</a>
 
                 <a href="#" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="left">
@@ -11,20 +11,20 @@
                 <ul id="right-navbar" class="right hide-on-med-and-down">
                     <li><a href="#legal">legal</a></li>
                     <li><a href="#aboutus">about us</a></li>
-                    <a href="#user-account-modal" class="modal-button waves-effect waves-light btn">
+                    <button class="login-modal waves-effect waves-light btn">
                         {{#if currentUser}} my account
                         {{else}}
                             sign in
                         {{/if}}
-                    </a>
+                    </button>
                 </ul>
                 <ul class="right hide-on-large-only">
-                    <a href="#user-account-modal" class="modal-button waves-effect waves-light btn">
-                    {{#if currentUser}} my account
-                    {{else}}
-                        sign in
-                    {{/if}}
-                    </a>
+                    <button class="login-modal waves-effect waves-light btn">
+                        {{#if currentUser}} my account
+                        {{else}}
+                            sign in
+                        {{/if}}
+                    </button>
                     <a href="#" class="left hide-on-large-only">SocialVideoLogo</a>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
@@ -55,4 +55,18 @@
             <label for="searchField"><i class="material-icons">search</i></label>
         </div>
     </form>
+</template>
+
+
+<template name="navbar2">
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs cyan submenu-tabs">
+                <li class="tab col s3"><a class="white-text" href="/subnav1">Newest</a></li>
+                <li class="tab col s3"><a class="white-text active" href="/subnav2">Popular</a></li>
+                <li class="tab col s3"><a class="white-text" href="/subnav3">Lowest Rated</a></li>
+                <li class="tab col s3"><a class="white-text" href="/subnav4">Random</a></li>
+            </ul>
+        </div>
+    </div>
 </template>
