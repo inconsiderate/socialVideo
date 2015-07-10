@@ -1,18 +1,26 @@
 if (Meteor.isClient) {
 
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('ul.tabs').tabs();
         $(".button-collapse").sideNav();
     });
 
+    Template.userVideos.helpers({
+        myVideos: function () {
+            return Videos.find({
+                username: Meteor.user().username
+            });
+        }
+    });
+
     Template.singleVideo.events({
-        "click .card-image": function() {
+        "click .card-image": function () {
             $('#videoSingleModal').openModal();
         }
     });
 
     Template.navbar.events({
-        "click .login-modal": function() {
+        "click .login-modal": function () {
             $('#user-account-modal').openModal();
             $('ul.tabs').tabs();
             $('.dropdown-button').dropdown({
