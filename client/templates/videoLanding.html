@@ -1,11 +1,10 @@
-<template name="videos">
-    {{> pages}}
-</template>
+<template name="videoLanding">
 
-<template name="singleVideo">
+    <p>this is the single video landing page</p>
+
     <div class="card col s12 m6 l4">
-            <div class="card-image waves-effect waves-block waves-light">
-            <video id="{{_id}}" class="video-js vjs-default-skin"
+        <div class="card-image waves-effect waves-block waves-light">
+            <video id="{{id}}" class="video-js vjs-default-skin"
                    controls preload="metadata" height="100%" width="100%">
                 <source src="{{path}}"/>
             </video>
@@ -21,7 +20,8 @@
             <p><strong>Description: </strong><br>{{description}}</p>
 
             <p><strong>Uploaded By: </strong><br>
-                <a href="video/{{_id}}">{{username}}</a></p>
+                <a href="user/{{_id}}">{{username}}</a></p>
         </div>
     </div>
+
 </template>

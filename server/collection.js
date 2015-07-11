@@ -3,7 +3,6 @@ Videos._ensureIndex( { "$**": "text" } );
 
 Meteor.methods({
     insertVideo: function (title, desc) {
-
         Videos.insert({
             title: title,
             //path: url,
@@ -13,12 +12,9 @@ Meteor.methods({
             owner: Meteor.userId(),
             username: Meteor.user().username
         });
+    },
 
-        //if () {
-        //    throw new Meteor.Error("pants-not-found", "Can't find my pants");
-        //}
-
-        return true;
+    viewUsers: function (id) {
+        return Meteor.users;
     }
-
 });
