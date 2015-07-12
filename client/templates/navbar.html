@@ -59,16 +59,28 @@
 <template name="navbar2">
     <div class="nav-wrapper white">
         <ul class="tabs white row">
-            <li id="newestvideoli" class="col s3 tab"><a id="newestvideoa" class="cyan-text active" href="#videosnewest">Newest</a></li>
-            <li id="popularvideoli" class="col s3 tab"><a class="cyan-text" href="#videospopular">Popular</a></li>
-            <li id="ratingvideoli" class="col s3 tab"><a class="cyan-text" href="#videosrated">Lowest Rated</a></li>
-            <li id="randomvideoli" class="col s3 tab"><a class="cyan-text" href="#videosrandom">Random</a></li>
+            <li class="col s3 tab"><a class="cyan-text active" href="#videosnewest">Newest</a></li>
+            <li class="col s3 tab"><a class="cyan-text" href="#videospopular">Popular</a></li>
+            <li class="col s3 tab"><a class="cyan-text" href="#videosrated">Lowest Rated</a></li>
+            <li class="col s3 tab"><a class="cyan-text" href="#videosrandom">Random</a></li>
         </ul>
     </div>
-
     <div id="videosnewest" class="col s12">{{> videosNewest}}</div>
     <div id="videospopular" class="col s12">{{> videosPopular}}</div>
     <div id="videosrated" class="col s12">{{> videosRated}}</div>
     <div id="videosrandom" class="col s12">{{> videosRandom}}</div>
+</template>
 
+
+<template name="searchNavbar">
+    <div class="nav-wrapper white">
+        <ul class="tabs white row">
+            <li class="col s3 tab"><a class="cyan-text active" href="#searchVideos">Videos</a></li>
+            <li class="col s3 tab"><a class="cyan-text" href="#searchImages">Images</a></li>
+            <li class="col s3 tab"><a class="cyan-text" href="#searchUsers">Users</a></li>
+        </ul>
+    </div>
+    <div id="searchVideos" class="col s12">{{> videosNewest}}</div>
+    <div id="searchImages" class="col s12">{{> videosPopular}}</div>
+    <div id="searchUsers" class="col s12">{{> videosRated}}</div>
 </template>

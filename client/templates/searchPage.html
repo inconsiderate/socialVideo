@@ -1,0 +1,15 @@
+<template name="searchPage">
+
+    <p>What are you searching for?</p>
+    <ul>
+        <li>Videos</li>
+        <li>Pictures</li>
+        <li>Collections</li>
+        <li>Users</li>
+    </ul>
+
+    {{#each newestVideos}}
+        {{> singleVideo}}
+    {{/each}}
+
+</template>

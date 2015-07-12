@@ -1,8 +1,8 @@
 
 
 Template.videosNewest.helpers({
-    newestVideos: function () {
-        return Videos.find({}, {sort: {createdAt: -1}, limit: 1});
+    newestVideo: function () {
+        return Videos.findOne({}, {sort: {createdAt: -1}});
     }
 });
 
@@ -24,3 +24,7 @@ Template.videosRandom.helpers({
     }
 });
 
+Template.videoLanding.onRendered(function () {
+    videojs(document.getElementsByClassName('singleVideoSecret')[0], {}, function() {
+    });
+});

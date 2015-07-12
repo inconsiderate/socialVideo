@@ -1,8 +1,8 @@
 <template name="videosNewest">
     <p>This is the single newest video</p>
-    {{#each newestVideos}}
+    {{#with newestVideo}}
         {{> singleVideo}}
-    {{/each}}
+    {{/with}}
 </template>
 
 <template name="videosPopular">
@@ -28,4 +28,12 @@
     {{#each randomVideo}}
         {{> singleVideo}}
     {{/each}}
+</template>
+
+<template name="videoLanding">
+
+    <p>This should be a single video:</p>
+
+    <video id="{{_id}}" class="singleVideoSecret video-js vjs-default-skin" controls preload="metadata" height="100%" width="100%"> <source src="{{path}}"/></video>
+
 </template>
