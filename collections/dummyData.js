@@ -1,13 +1,11 @@
 
 var N = 10;
-var idnum = 1;
 
 if (Meteor.isServer && Videos.find().count() < N) {
     Videos.remove({});
 
-    for (i=0; i < N; i++ ) {
+    for (i = 0; i < N; i++) {
         Videos.insert({
-            id: idnum,
             path: 'videos/jellyfish.mkv',
             title: 'jellyfish mkv',
             keywords: 'jellyfish mkv sample test2',
@@ -16,11 +14,9 @@ if (Meteor.isServer && Videos.find().count() < N) {
             username: 'trevor',
             likes: Math.floor((Math.random() * 1000) + 1)
         });
-        idnum++;
     }
-    for (i=0; i < N; i++ ) {
+    for (i = 0; i < N; i++) {
         Videos.insert({
-            id: idnum,
             path: 'videos/medium_mpeg4_sample.mp4',
             title: 'medium mpeg4 sample long title lolwut too long',
             keywords: 'medium mpeg4 mpg4 sample mp4',
@@ -29,11 +25,9 @@ if (Meteor.isServer && Videos.find().count() < N) {
             username: 'alice',
             likes: Math.floor((Math.random() * 1000) + 1)
         });
-        idnum++;
     }
-    for (i=0; i < N; i++ ) {
+    for (i = 0; i < N; i++) {
         Videos.insert({
-            id: idnum,
             path: 'videos/mkv_sample.mkv',
             title: 'mkv sample',
             keywords: 'mkv test1 sample unknown',
@@ -42,11 +36,9 @@ if (Meteor.isServer && Videos.find().count() < N) {
             username: 'alice',
             likes: Math.floor((Math.random() * 1000) + 1)
         });
-        idnum++;
     }
-    for (i=0; i < N; i++ ) {
+    for (i = 0; i < N; i++) {
         Videos.insert({
-            id: idnum,
             path: 'videos/small_mpeg4_sample.mp4',
             title: 'small mpeg4',
             keywords: 'test1 mpeg4 mpg4',
@@ -55,11 +47,9 @@ if (Meteor.isServer && Videos.find().count() < N) {
             username: 'sara',
             likes: Math.floor((Math.random() * 1000) + 1)
         });
-        idnum++;
     }
-    for (i=0; i < N; i++ ) {
+    for (i = 0; i < N; i++) {
         Videos.insert({
-            id: idnum,
             path: 'videos/wizard.mp4',
             title: '3mily is a wizard!',
             keywords: 'test2 wizard mp4',
@@ -68,6 +58,10 @@ if (Meteor.isServer && Videos.find().count() < N) {
             username: '3mily',
             likes: Math.floor((Math.random() * 1000) + 1)
         });
-        idnum++;
     }
+
+    VideoComments.remove({});
+    //TODO: create dummy video comments
+    UserProfileComments.remove({});
+    //TODO: create dummy user profile comments
 }

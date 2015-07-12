@@ -1,4 +1,15 @@
 
+//Meteor.publish("userData", function () {
+//    return Meteor.users.find({_id: this.userId},
+//        {fields: {'other': 1, 'things': 1}});
+//});
+
+Meteor.publish("publicUserData", function () {
+    return Meteor.users.find({}, {fields: {
+        'username': 1
+    }});
+});
+
 Videos._ensureIndex( { "$**": "text" } );
 
 Meteor.methods({
@@ -27,13 +38,10 @@ Meteor.publish('videos-by-user', function(user) {
     return Videos.find({_id: user._id}, {sort: {createdAt: -1}, limit: 10});
 });
 
-//Meteor.publish("userData", function () {
-//    return Meteor.users.find({_id: this.userId},
-//        {fields: {'other': 1, 'things': 1}});
-//});
+Meteor.publish('comments-for-one-video', function(videoid) {
+    return VideoComments.find({videoid: videoid._id}, {sort: {createdAt: -1}});
+});
 
-Meteor.publish("publicUserData", function () {
-    return Meteor.users.find({}, {fields: {
-        'username': 1
-    }});
+Meteor.publish('video-comments-for-one-user', function(user) {
+    return VideoComments.find({userid: user._id}, {sort: {createdAt: -1}});
 });

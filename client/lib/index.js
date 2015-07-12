@@ -21,6 +21,7 @@ if (Meteor.isClient) {
     //        $('#videoSingleModal').openModal();
     //    }
     //});
+    //
 
     Template.navbar.events({
         "click .login-modal": function () {
