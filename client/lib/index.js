@@ -26,6 +26,7 @@ if (Meteor.isClient) {
         "click .login-modal": function () {
             $('#user-account-modal').openModal();
             $('ul.tabs').tabs();
+            $('input#video_title, input#video_description').characterCounter();
             $('.dropdown-button').dropdown({
                     inDuration: 800,
                     outDuration: 225,

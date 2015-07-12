@@ -4,7 +4,7 @@
             <div class="nav-wrapper white">
                 <a href="/" class="cyan-text brand-logo center hide-on-med-and-down">daddy issues</a>
 
-                <a href="#" class="button-collapse"><i class="cyan-text material-icons">menu</i></a>
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="cyan-text material-icons">menu</i></a>
                 <ul class="left">
                     {{>searchForm}}
                 </ul>
@@ -19,15 +19,15 @@
                     </button>
                 </ul>
                 <ul class="right hide-on-large-only">
-                    <button class="login-modal waves-effect waves-light btn">
+                    <button class="cyan login-modal waves-effect waves-light btn">
                         {{#if currentUser}} my account
                         {{else}}
                             sign in
                         {{/if}}
                     </button>
-                    <a href="#" class="left hide-on-large-only">SocialVideoLogo</a>
+                    <a href="#" class="cyan-text left hide-on-large-only">daddy issues</a>
                 </ul>
-                <ul class="side-nav" id="mobile-demo">
+                <ul class="side-nav" id="slide-out">
                     <li><a href="#filter1">Filter 1</a></li>
                     <li><a href="#filter2">Filter 2</a></li>
                     <li><a href="#filter3">Filter 3</a></li>

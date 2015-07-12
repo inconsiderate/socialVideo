@@ -1,63 +1,69 @@
 <template name="submitNewVideo">
     <div class="row">
         <form class="col s12 submit-video-form">
+
             <div class="row">
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">view_list</i>
-                    <a class='dropdown-button btn' href='#' data-activates='keywordsDropdown'>Select Keywords</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12">
                     <i class="material-icons prefix">speaker_notes</i>
-                    <input id="video_title" type="text" class="validate" required>
+                    <input id="video_title" type="text" length="35" class="validate" required>
                     <label for="video_title">Title</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12">
                     <i class="material-icons prefix">speaker_notes</i>
-                    <input id="video_description" type="text" class="validate" required>
+                    <input id="video_description" type="text" length="145" class="validate" required>
                     <label for="video_description">Description</label>
                 </div>
             </div>
+
             <div class="row">
-                <div class="file-field input-field">
-                    <i class="material-icons prefix">movie</i>
-                    <input type="file" id="file_bag" required>
-                    <label for="file_bag">Choose file...</label>
-                    {{#each files}}
-                        <p>{{percent_uploaded}}</p>
-                    {{/each}}
+                <p>Pick a couple keywords if you like:</p>
+                <span class="col s3">
+                    <input name="straight" type="checkbox" id="keyword1"/>
+                    <label for="keyword1">Straight</label>
+                </span>
+                    <span class="col s3">
+                    <input name="gay" type="checkbox" id="keyword2"/>
+                    <label for="keyword2">Gay</label>
+                </span>
+                    <span class="col s3">
+                    <input name="lesbian" type="checkbox" id="keyword3"/>
+                    <label for="keyword3">Lesbian</label>
+                </span>
+                    <span class="col s3">
+                    <input name="teen" type="checkbox" id="keyword4"/>
+                    <label for="keyword4">Teen</label>
+                </span>
+                    <span class="col s3">
+                    <input name="amateur" type="checkbox" id="keyword5"/>
+                    <label for="keyword5">Amateur</label>
+                </span>
+                    <span class="col s3">
+                    <input name="reality" type="checkbox" id="keyword6"/>
+                    <label for="keyword6">Reality</label>
+                </span>
+                    <span class="col s3">
+                    <input name="group" type="checkbox" id="keyword7"/>
+                    <label for="keyword7">Group</label>
+                </span>
+                <span class="col s3">
+                    <input name="mature" type="checkbox" id="keyword8"/>
+                    <label for="keyword8">Mature</label>
+                </span>
+            </div>
+
+
+            <div class="row">
+                <div class="col s6 file-field input-field cyan btn waves-effect waves-light">
+                    <input class="file-path validate" type="file" id="file_bucket" required>
+                    <span>Choose File</span>
+                </div>
+                <div class="input-field col s3 offset-s3">
+                    <button class="cyan waves-effect waves-light btn" type="submit">SUBMIT</button>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="input-field col s6">
-                    <button class="upload" type="submit">SUBMIT</button>
-                </div>
-            </div>
-
-            <ul id='keywordsDropdown' class='dropdown-content'>
-
-                <p>Please choose at least one keyword from the following list:</p>
-                <input type="checkbox" id="genre1"/>
-                <label for="genre1">Genre 1</label>
-                <br>
-                <input type="checkbox" id="genre2"/>
-                <label for="genre2">Genre 2</label>
-                <br>
-                <input type="checkbox" id="genre3"/>
-                <label for="genre3">Genre 3 is long title</label>
-                <br>
-                <input type="checkbox" id="genre4"/>
-                <label for="genre4">Genre 4</label>
-                <br>
-                <input type="checkbox" id="genre5"/>
-                <label for="genre5">Genre 5</label>
-                <br>
-                <br>
-            </ul>
         </form>
     </div>
 </template>

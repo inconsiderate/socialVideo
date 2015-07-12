@@ -8,6 +8,7 @@ Template.videosNewest.helpers({
 
 Template.videosPopular.helpers({
     popularVideos: function () {
+        //TODO: change this to VIEWS
         return Videos.find({}, {sort: {likes: -1}, limit: 20});
     }
 });
