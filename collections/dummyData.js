@@ -13,7 +13,8 @@ if (Meteor.isServer && Videos.find().count() < N) {
             keywords: 'jellyfish mkv sample test2',
             description: 'this is the description and some jellyfish or whatever',
             createdAt: new Date(),
-            username: 'trevor'
+            username: 'trevor',
+            likes: Math.floor((Math.random() * 1000) + 1)
         });
         idnum++;
     }
@@ -25,7 +26,8 @@ if (Meteor.isServer && Videos.find().count() < N) {
             keywords: 'medium mpeg4 mpg4 sample mp4',
             description: 'here is some description mp4',
             createdAt: new Date(),
-            username: 'alice'
+            username: 'alice',
+            likes: Math.floor((Math.random() * 1000) + 1)
         });
         idnum++;
     }
@@ -37,7 +39,8 @@ if (Meteor.isServer && Videos.find().count() < N) {
             keywords: 'mkv test1 sample unknown',
             description: 'this is an mkv with no description',
             createdAt: new Date(),
-            username: 'alice'
+            username: 'alice',
+            likes: Math.floor((Math.random() * 1000) + 1)
         });
         idnum++;
     }
@@ -49,7 +52,8 @@ if (Meteor.isServer && Videos.find().count() < N) {
             keywords: 'test1 mpeg4 mpg4',
             description: 'without mp4 or sample in the keywords',
             createdAt: new Date(),
-            username: 'sara'
+            username: 'sara',
+            likes: Math.floor((Math.random() * 1000) + 1)
         });
         idnum++;
     }
@@ -61,7 +65,8 @@ if (Meteor.isServer && Videos.find().count() < N) {
             keywords: 'test2 wizard mp4',
             description: '3mily is a wizard with the mp4',
             createdAt: new Date(),
-            username: '3mily'
+            username: '3mily',
+            likes: Math.floor((Math.random() * 1000) + 1)
         });
         idnum++;
     }

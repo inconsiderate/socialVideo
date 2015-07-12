@@ -1,0 +1,31 @@
+<template name="videosNewest">
+    <p>This is the single newest video</p>
+    {{#each newestVideos}}
+        {{> singleVideo}}
+    {{/each}}
+</template>
+
+<template name="videosPopular">
+    <p>These are the videos sorted by popularity</p>
+    <div class="videoContainer row">
+        {{#each popularVideos}}
+            {{> singleVideo}}
+        {{/each}}
+    </div>
+</template>
+
+<template name="videosRated">
+    <p>These are the videos sorted by rating</p>
+    <div class="videoContainer row">
+        {{#each ratedVideos}}
+            {{> singleVideo}}
+        {{/each}}
+    </div>
+</template>
+
+<template name="videosRandom">
+    <p>This is a single random video</p>
+    {{#each randomVideo}}
+        {{> singleVideo}}
+    {{/each}}
+</template>
