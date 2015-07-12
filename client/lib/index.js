@@ -1,12 +1,18 @@
 if (Meteor.isClient) {
 
     $(document).ready(function () {
-        $('ul.tabs').tabs();
-        $(".button-collapse").sideNav();
     });
 
     Template.userVideos.helpers({
         myVideos: function () {
+            return Videos.find({
+                username: Meteor.user().username
+            });
+        }
+    });
+
+    Template.videoLanding.helpers({
+        someVideos: function () {
             return Videos.find({
                 username: Meteor.user().username
             });
@@ -29,7 +35,7 @@ if (Meteor.isClient) {
                     constrain_width: false, // Does not change width of dropdown to that of the activator
                     hover: true, // Activate on hover
                     gutter: 5, // Spacing from edge
-                    belowOrigin: true // Displays dropdown below the button
+                    belowOrigin: true //
                 }
             );
         }

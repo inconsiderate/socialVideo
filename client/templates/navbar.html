@@ -1,17 +1,17 @@
 <template name="navbar">
     <div class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper cyan">
-                <a href="/" class="brand-logo center hide-on-med-and-down">social video</a>
+            <div class="nav-wrapper white">
+                <a href="/" class="cyan-text brand-logo center hide-on-med-and-down">daddy issues</a>
 
-                <a href="#" class="button-collapse"><i class="material-icons">menu</i></a>
+                <a href="#" class="button-collapse"><i class="cyan-text material-icons">menu</i></a>
                 <ul class="left">
                     {{>searchForm}}
                 </ul>
                 <ul id="right-navbar" class="right hide-on-med-and-down">
-                    <li><a href="#legal">legal</a></li>
-                    <li><a href="#aboutus">about us</a></li>
-                    <button class="login-modal waves-effect waves-light btn">
+                    <li><a class="cyan-text" href="#legal">legal</a></li>
+                    <li><a class="cyan-text" href="#aboutus">about us</a></li>
+                    <button class="cyan login-modal waves-effect waves-light btn">
                         {{#if currentUser}} my account
                         {{else}}
                             sign in
@@ -41,7 +41,6 @@
                     <li class="divider"></li>
                     <li><a href="#legal">Legal</a></li>
                     <li><a href="#aboutus">About Us</a></li>
-
                 </ul>
             </div>
         </nav>
@@ -59,14 +58,12 @@
 
 
 <template name="navbar2">
-    <div class="row">
-        <div class="col s12">
-            <ul class="tabs cyan submenu-tabs">
-                <li class="tab col s3"><a class="white-text" href="/subnav1">Newest</a></li>
-                <li class="tab col s3"><a class="white-text active" href="/subnav2">Popular</a></li>
-                <li class="tab col s3"><a class="white-text" href="/subnav3">Lowest Rated</a></li>
-                <li class="tab col s3"><a class="white-text" href="/subnav4">Random</a></li>
-            </ul>
-        </div>
+    <div class="nav-wrapper white">
+        <ul class="tabs white row">
+            <a class="cyan-text" href="/videos/newest"><li class="col s3 tab">Newest</li></a>
+            <a class="cyan-text" href="/videos/popular"><li class="col s3 tab">Popular</li></a>
+            <a class="cyan-text" href="/videos/rated"><li class="col s3 tab">Lowest Rated</li></a>
+            <a class="cyan-text" href="/videos/random"><li class="col s3 tab">Random</li></a>
+        </ul>
     </div>
 </template>

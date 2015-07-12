@@ -8,11 +8,16 @@
     {{> videoModal}}
 
     <div class="container">
-        {{>navbar2}}
+        {{> yield "navbar2"}}
     </div>
 
     <div class="container">
         {{> yield "mainContent"}}
+
+    </div>
+
+    <div class="container">
+        {{> yield "footer"}}
     </div>
 
 </template>

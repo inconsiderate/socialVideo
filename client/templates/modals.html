@@ -1,27 +1,27 @@
 <template name="userControlModal">
     <div id="user-account-modal" class="modal indigo lighten-5">
-        <div class="modal-content">
+        <div class="modal-content white">
             {{#if currentUser}}
                 <div class="row">
                     <div class="col s12">
-                        <ul class="tabs cyan">
-                            <li class="tab col s3"><a class="white-text active" href="#test1">My Profile</a></li>
-                            <li class="tab col s3"><a class="white-text" href="#test2">Friends</a></li>
-                            <li class="tab col s3"><a class="white-text" href="#test3">My Videos</a></li>
-                            <li class="tab col s3"><a class="white-text" href="#test4">Submit Video</a></li>
+                        <ul class="tabs white">
+                            <li class="tab col s3"><a class="cyan-text active" href="#userProfileLink">My Profile</a></li>
+                            <li class="tab col s3"><a class="cyan-text" href="#userFriendLink">Friends</a></li>
+                            <li class="tab col s3"><a class="cyan-text" href="#userVideosLink">My Videos</a></li>
+                            <li class="tab col s3"><a class="cyan-text" href="#userSubmitVideoLink">Submit Video</a></li>
                         </ul>
                     </div>
-                    <div id="test1" class="col s12">{{> userProfile}}</div>
-                    <div id="test2" class="col s12">{{> userFriends}}</div>
-                    <div id="test3" class="col s12">{{> userVideos}}</div>
-                    <div id="test4" class="col s12">{{> submitNewVideo}}</div>
+                    <div id="userProfileLink" class="col s12">{{> userProfile}}</div>
+                    <div id="userFriendLink" class="col s12">{{> userFriends}}</div>
+                    <div id="userVideosLink" class="col s12">{{> userVideos}}</div>
+                    <div id="userSubmitVideoLink" class="col s12">{{> submitNewVideo}}</div>
                 </div>
             {{else}}
                 {{> atForm}}
             {{/if}}
         </div>
         {{#if currentUser}}
-            <div class="modal-footer cyan">
+            <div class="modal-footer cyan darken-2">
                 {{> atNavButton}}
             </div>
         {{/if}}
@@ -57,7 +57,7 @@
             </div>
         </div>
 
-        <div class="modal-footer">
+        <div class="modal-footer cyan darken-2">
             <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>

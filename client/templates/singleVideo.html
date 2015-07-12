@@ -25,3 +25,14 @@
         </div>
     </div>
 </template>
+
+
+<template name="mainVideoList">
+
+    <p>here's the list: </p>
+
+    {{#each someVideos}}
+        {{> singleVideo}}
+    {{/each}}
+
+</template>
