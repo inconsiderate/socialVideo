@@ -29,19 +29,19 @@ Template.submitNewVideo.events({
             mature: event.target.keyword8.checked
         };
         console.log(keywords);
-        //S3.upload({
-        //    file: file,
-        // TODO: Let's also upload an image or gif, once we are converting our own stuff
-        //    path: "prodvideos"
-        //}, function (e, r) {
-        //    if (e == null) {
+        S3.upload({
+            file: file,
+         //TODO: Let's also upload an image or gif, once we are converting our own stuff
+            path: "prodvideos"
+        }, function (e, r) {
+            if (e == null) {
                 Materialize.toast('Upload Successful!', 4000);
                 Meteor.call('insertVideo', title, desc, keywords);
-        //    } else {
-        //        Materialize.toast('Upload failed for some reason.', 4000);
-        //        Materialize.toast(e, 4000);
-        //    }
-        //});
+            } else {
+                Materialize.toast('Upload failed for some reason.', 4000);
+                Materialize.toast(e, 4000);
+            }
+        });
         event.target.video_title.value = "";
         event.target.video_description.value = "";
         $('input[type="checkbox"]').removeAttr('checked');
