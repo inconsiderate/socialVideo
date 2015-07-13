@@ -36,6 +36,17 @@
 
     <video id="{{_id}}" class="video-js vjs-default-skin" controls preload="metadata" height="100%" width="100%"> <source src="{{path}}"/></video>
 
-    <!--TODO: display some video comments here. nothing special.-->
+    <p></p>
+    <p></p>
+
+    <button class="createComment">Post Comment!</button>
+
+    <div class="commentContainer row">
+    {{#each allComments}}
+        {{> singleComment }}
+    {{/each}}
+    </div>
+
+    {{>newCommentModal}}
 </template>
 

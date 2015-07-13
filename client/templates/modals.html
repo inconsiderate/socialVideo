@@ -5,10 +5,12 @@
                 <div class="row">
                     <div class="col s12">
                         <ul class="tabs white">
-                            <li class="tab col s3"><a class="cyan-text active" href="#userProfileLink">My Profile</a></li>
+                            <li class="tab col s3"><a class="cyan-text active" href="#userProfileLink">My Profile</a>
+                            </li>
                             <li class="tab col s3"><a class="cyan-text" href="#userFriendLink">Friends</a></li>
                             <li class="tab col s3"><a class="cyan-text" href="#userVideosLink">My Videos</a></li>
-                            <li class="tab col s3"><a class="cyan-text" href="#userSubmitVideoLink">Submit Video</a></li>
+                            <li class="tab col s3"><a class="cyan-text" href="#userSubmitVideoLink">Submit Video</a>
+                            </li>
                         </ul>
                     </div>
                     <div id="userProfileLink" class="col s12">{{> userProfile}}</div>
@@ -28,35 +30,26 @@
     </div>
 </template>
 
-<template name="videoModal">
-    <div id="videoSingleModal" class="modal">
+<template name="newCommentModal">
+    <div id="newCommentModal" class="modal">
         <div class="modal-content row">
-            <div class="col s12">
-                <video id="{{id}}" class="video-js vjs-default-skin"
-                       controls preload="metadata" height="100%" width="100%">
-                    <source src="{{path}}"/>
-                    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web
-                        browser
-                        that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                    </p>
-                </video>
-            </div>
-            <div class="col s12">
-                <p>COMMENTS</p>
-                <ul>
-                    <li>this is a comment</li>
-                    <li>this is another comment</li>
-                    <li>yet another comment</li>
-                    <li>this is a comment</li>
-                    <li>this is another comment</li>
-                    <li>yet another comment</li>
-                    <li>this is a comment</li>
-                    <li>this is another comment</li>
-                    <li>yet another comment</li>
-                </ul>
-            </div>
-        </div>
+            <p>Leave a Comment!</p>
+            <form class="col s12 submit-video-comment">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="hidden" id="videoid" value="{{_id}}"/>
+                        <textarea id="content" class="materialize-textarea"></textarea>
+                        <label for="content">Comment:</label>
+                    </div>
+                </div>
 
+                <div class="input-field col s3 offset-s3">
+                    <button class="cyan waves-effect waves-light btn" type="submit">SUBMIT</button>
+                </div>
+
+            </form>
+
+        </div>
         <div class="modal-footer cyan darken-2">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
         </div>

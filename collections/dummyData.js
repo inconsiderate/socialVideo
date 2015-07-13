@@ -49,8 +49,9 @@ if (Meteor.isServer && Videos.find().count() < N) {
         });
     }
 
+
     VideoComments.remove({});
-    //TODO: create dummy video comments
+
     UserProfileComments.remove({});
     //TODO: create dummy user profile comments
 }

@@ -9,9 +9,13 @@ if (Meteor.isClient) {
 
     Template.userVideos.helpers({
         myVideos: function () {
-            return Videos.find({
-                username: Meteor.user().username
-            });
+            return Videos.find({username: Meteor.user().username});
+        }
+    });
+
+    Template.userProfile.helpers({
+        myComments: function() {
+            // TODO: return all user comments
         }
     });
 

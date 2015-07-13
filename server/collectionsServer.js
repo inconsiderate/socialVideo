@@ -23,6 +23,15 @@ Meteor.methods({
             owner: Meteor.userId(),
             username: Meteor.user().username
         });
+    },
+    insertVideoComment: function (videoid, content) {
+        VideoComments.insert({
+            videoid: videoid,
+            content: content,
+            createdAt: new Date(),
+            owner: Meteor.userId(),
+            username: Meteor.user().username
+        });
     }
 });
 
@@ -34,14 +43,10 @@ Meteor.publish('videos-current-user', function() {
     return Videos.find({username: this.userId}, {sort: {createdAt: -1}, limit: 10});
 });
 
-Meteor.publish('videos-by-user', function(user) {
-    return Videos.find({_id: user._id}, {sort: {createdAt: -1}, limit: 10});
+Meteor.publish('comments', function() {
+    return VideoComments.find();
 });
 
-//Meteor.publish('comments-for-one-video', function(videoid) {
-//    return VideoComments.find({videoid: videoid._id}, {sort: {createdAt: -1}});
-//});
-//
 //Meteor.publish('video-comments-for-one-user', function(user) {
-//    return VideoComments.find({userid: user._id}, {sort: {createdAt: -1}});
+//    return VideoComments.find({username: user}, {sort: {createdAt: -1}});
 //});
