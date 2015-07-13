@@ -31,16 +31,14 @@
 </template>
 
 <template name="videoLanding">
-
-    <p>This should be a single video:</p>
-
+    <p>{{title}}</p>
     <video id="{{_id}}" class="video-js vjs-default-skin" controls preload="metadata" height="100%" width="100%"> <source src="{{path}}"/></video>
 
     <p></p>
     <p></p>
 
     <button class="right createComment cyan waves-effect waves-light btn" type="submit">New Comment</button>
-
+<br><br><br>
     <div class="commentContainer row">
     {{#each allComments}}
         {{> singleComment }}

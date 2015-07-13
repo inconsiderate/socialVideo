@@ -32,26 +32,21 @@
 
 <template name="newCommentModal">
     <div id="newCommentModal" class="modal">
-        <div class="modal-content row">
-            <p>Leave a Comment!</p>
+        <div class="modal-content white row">
+            <h4 class="center cyan-text">Leave a Comment!</h4>
             <form class="col s12 submit-video-comment">
+                <input type="hidden" id="videoid" value="{{_id}}"/>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="hidden" id="videoid" value="{{_id}}"/>
-                        <textarea id="content" class="materialize-textarea"></textarea>
+                        <i class="material-icons prefix">speaker_notes</i>
+                        <input id="content" type="text" length="400" class="validate" required/>
                         <label for="content">Comment:</label>
                     </div>
                 </div>
-
-                <div class="input-field col s3 offset-s3">
-                    <button class="cyan waves-effect waves-light btn" type="submit">SUBMIT</button>
+                <div class="input-field col s12 right">
+                    <button class="right cyan waves-effect waves-light btn" type="submit">SUBMIT</button>
                 </div>
-
             </form>
-
-        </div>
-        <div class="modal-footer cyan darken-2">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
 </template>
