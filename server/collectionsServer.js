@@ -38,10 +38,10 @@ Meteor.publish('videos-by-user', function(user) {
     return Videos.find({_id: user._id}, {sort: {createdAt: -1}, limit: 10});
 });
 
-Meteor.publish('comments-for-one-video', function(videoid) {
-    return VideoComments.find({videoid: videoid._id}, {sort: {createdAt: -1}});
-});
-
-Meteor.publish('video-comments-for-one-user', function(user) {
-    return VideoComments.find({userid: user._id}, {sort: {createdAt: -1}});
-});
+//Meteor.publish('comments-for-one-video', function(videoid) {
+//    return VideoComments.find({videoid: videoid._id}, {sort: {createdAt: -1}});
+//});
+//
+//Meteor.publish('video-comments-for-one-user', function(user) {
+//    return VideoComments.find({userid: user._id}, {sort: {createdAt: -1}});
+//});

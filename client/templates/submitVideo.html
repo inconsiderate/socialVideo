@@ -55,8 +55,8 @@
 
 
             <div class="row">
-                <div class="col s6 file-field input-field cyan btn waves-effect waves-light">
-                    <input class="file-path validate" type="file" id="file_bucket" required>
+                <div class="col s6 input-field cyan btn waves-effect waves-light">
+                    <input class="file-path file_bag validate" type="file" id="file_bucket" required>
                     <span>Choose File</span>
                 </div>
                 <div class="input-field col s3 offset-s3">
@@ -64,6 +64,11 @@
                 </div>
             </div>
 
+            <div id="percent_uploaded">
+            {{#each files}}
+                <p>Upload Progress: {{percent_uploaded}}</p>
+            {{/each}}
+            </div>
         </form>
     </div>
 </template>

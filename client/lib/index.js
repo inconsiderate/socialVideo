@@ -8,21 +8,6 @@ if (Meteor.isClient) {
         }
     });
 
-    //Template.videoLanding.helpers({
-    //    singleVideo: function () {
-    //        return Videos.findOne({
-    //            _id:
-    //        });
-    //    }
-    //});
-
-    //Template.singleVideo.events({
-    //    "click .card-image": function () {
-    //        $('#videoSingleModal').openModal();
-    //    }
-    //});
-    //
-
     Template.navbar.events({
         "click .login-modal": function () {
             $('.video-js').bind('contextmenu',function() { return false; });

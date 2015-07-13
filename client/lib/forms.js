@@ -12,9 +12,15 @@ Template.searchForm.events({
     }
 });
 
+Template.submitNewVideo.helpers({
+    "files": function(){
+        return S3.collection.find();
+    }
+});
+
 Template.submitNewVideo.events({
     "submit .submit-video-form": function (event) {
-        var file = $("input[type='file']")[0].files;
+        var files = $("input[type='file']")[0].files;
         var title = event.target.video_title.value;
         var desc = event.target.video_description.value;
         var keywords = [];
@@ -28,18 +34,17 @@ Template.submitNewVideo.events({
             group: event.target.keyword7.checked,
             mature: event.target.keyword8.checked
         };
-        console.log(keywords);
         S3.upload({
-            file: file,
+            files: files,
          //TODO: Let's also upload an image or gif, once we are converting our own stuff
-            path: "prodvideos"
+            path: "testfolder"
         }, function (e, r) {
-            if (e == null) {
-                Materialize.toast('Upload Successful!', 4000);
-                Meteor.call('insertVideo', title, desc, keywords);
-            } else {
+            if (e != null) {
                 Materialize.toast('Upload failed for some reason.', 4000);
                 Materialize.toast(e, 4000);
+            } else if (r.percent_uploaded == 100){
+                Materialize.toast('Upload Successful!', 4000);
+                Meteor.call('insertVideo', title, desc, keywords);
             }
         });
         event.target.video_title.value = "";

@@ -1,0 +1,7 @@
+.DS_Store
+.idea/
+.meteor/
+mup.json
+settings.json
+public/videos/
+
