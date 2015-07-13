@@ -44,7 +44,7 @@ Template.submitNewVideo.events({
                 Materialize.toast(e, 4000);
             } else if (r.percent_uploaded == 100){
                 Materialize.toast('Upload Successful!', 4000);
-                Meteor.call('insertVideo', title, desc, keywords);
+                Meteor.call('insertVideo', title, desc, r.url);
             }
         });
         event.target.video_title.value = "";

@@ -1,5 +1,12 @@
 if (Meteor.isClient) {
 
+    Template.body.events({
+        "click a": function() {
+            $('.video-js').bind('contextmenu',function() { return false; });
+            $('ul.tabs').tabs();
+        }
+    });
+
     Template.userVideos.helpers({
         myVideos: function () {
             return Videos.find({
@@ -23,6 +30,8 @@ if (Meteor.isClient) {
                     belowOrigin: true //
                 }
             );
+            videojs(document.getElementsByClassName('video-js')[0], {}, function() {
+            });
         }
     });
 }

@@ -13,10 +13,10 @@ Meteor.publish("publicUserData", function () {
 Videos._ensureIndex( { "$**": "text" } );
 
 Meteor.methods({
-    insertVideo: function (title, desc) {
+    insertVideo: function (title, desc, url) {
         Videos.insert({
             title: title,
-            //path: url,
+            path: url,
             //keywords: keywords,
             description: desc,
             createdAt: new Date(),
