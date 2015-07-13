@@ -25,6 +25,7 @@ if (Meteor.isClient) {
 
     Template.navbar.events({
         "click .login-modal": function () {
+            $('.video-js').bind('contextmenu',function() { return false; });
             $('#user-account-modal').openModal();
             $('ul.tabs').tabs();
             $('input#video_title, input#video_description').characterCounter();
