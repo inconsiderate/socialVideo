@@ -37,7 +37,7 @@ Template.submitNewVideo.events({
         S3.upload({
             files: files,
          //TODO: Let's also upload an image or gif, once we are converting our own stuff
-            path: "testfolder"
+            path: "testvideos"
         }, function (e, r) {
             if (e != null) {
                 Materialize.toast('Upload failed for some reason.', 4000);
