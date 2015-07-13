@@ -37,7 +37,9 @@
     <p></p>
     <p></p>
 
+    {{#if currentUser}}
     <button class="right createComment cyan waves-effect waves-light btn" type="submit">New Comment</button>
+        {{/if}}
 <br><br><br>
     <div class="commentContainer row">
     {{#each allComments}}
