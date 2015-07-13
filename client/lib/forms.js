@@ -1,11 +1,11 @@
 Template.searchForm.events({
     "submit .search-field-form": function (event) {
         var searchFilter = event.target.searchField.value;
-        Pages.set({
-            filters: {
-                $text: {$search: searchFilter}
-            }
-        });
+        //Pages.set({
+        //    filters: {
+        //        $text: {$search: searchFilter}
+        //    }
+        //});
         event.target.searchField.value = "";
         event.preventDefault();
         return false;
