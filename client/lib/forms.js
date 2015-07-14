@@ -56,6 +56,7 @@ Template.submitNewVideo.events({
     }
 });
 
+
 Template.newCommentModal.events({
     "submit .submit-video-comment": function (event) {
         var content = event.target.content.value;
@@ -69,3 +70,7 @@ Template.newCommentModal.events({
         return false;
     }
 });
+
+
+
+
