@@ -1,12 +1,10 @@
 <template name="videosNewest">
-    <p>This is the single newest video</p>
     {{#with newestVideo}}
         {{> singleVideo}}
     {{/with}}
 </template>
 
 <template name="videosPopular">
-    <p>These are the videos sorted by popularity</p>
     <div class="videoContainer row">
         {{#each popularVideos}}
             {{> singleVideo}}
@@ -15,7 +13,6 @@
 </template>
 
 <template name="videosRated">
-    <p>These are the videos sorted by rating</p>
     <div class="videoContainer row">
         {{#each ratedVideos}}
             {{> singleVideo}}
@@ -24,15 +21,30 @@
 </template>
 
 <template name="videosRandom">
-    <p>This is a single random video</p>
     {{#each randomVideo}}
         {{> singleVideo}}
     {{/each}}
 </template>
 
 <template name="videoLanding">
-    <p>{{title}}</p>
-    <video id="{{_id}}" class="video-js vjs-default-skin" controls preload="metadata" height="100%" width="100%"> <source src="{{path}}"/></video>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-image">
+                    <video id="{{_id}}" class="video-js vjs-default-skin" controls preload="metadata" height="100%" width="100%"> <source src="{{path}}"/></video>
+                </div>
+                <div class="card-content">
+                    <blockquote>{{description}}</blockquote>
+                </div>
+                <div class="card-action valign-wrapper">
+                    <span class="badge valign">{{comments}}<i class="tiny material-icons right">comment</i><br>{{likes}}<i class="tiny material-icons right">thumb_up</i></span>
+
+                    <span class="left valign">by: <a href="users/{{username}}">{{username}}</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <p></p>
     <p></p>

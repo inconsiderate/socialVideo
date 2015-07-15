@@ -1,0 +1,20 @@
+
+<template name="singleComment">
+
+    <div class="valign-wrapper row">
+        <div class="center col s2 valign">
+            <a href="/users/{{username}}"><img src="http://31.media.tumblr.com/avatar_1179596bebbb_64.png"></a>
+        </div>
+
+        <div class="col s10 valign">
+            <div class="card-panel cyan darken-3">
+                <a href="/users/{{username}}"><span class="white-text left">{{username}}</span></a>
+                <span class="white-text right">{{createdAt}}</span>
+                <br>
+          <span class="white-text">{{content}}
+          </span>
+            </div>
+        </div>
+    </div>
+
+</template>

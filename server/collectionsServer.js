@@ -21,9 +21,21 @@ Meteor.methods({
             description: desc,
             createdAt: new Date(),
             owner: Meteor.userId(),
-            username: Meteor.user().username
+            username: Meteor.user().username,
+            comments: 0,
+            likes: 0
         });
     },
+    deleteVideo: function (videoid) {
+        //TODO: check that user owns this video
+        Videos.remove({
+            _id: videoid
+        });
+        VideoComments.remove({
+            videoid: videoid
+        });
+    },
+
     insertVideoComment: function (videoid, content) {
         VideoComments.insert({
             videoid: videoid,
@@ -32,6 +44,19 @@ Meteor.methods({
             owner: Meteor.userId(),
             username: Meteor.user().username
         });
+        Videos.update(videoid, {
+            $inc: {comments: 1}
+        })
+    },
+
+    deleteVideoComment: function (videoid, commentid) {
+        //TODO: check that user owns this comment
+        VideoComments.remove({
+            _id: commentid
+        });
+        Videos.update(videoid, {
+            $inc: {comments: -1}
+        })
     }
 });
 
