@@ -20,3 +20,18 @@
         </div>
     </div>
 </template>
+
+
+<template name="smallVideoCard">
+    <li class="collection-item avatar">
+        <a href="/videos/{{_id}}">
+            <video id="{{_id}}" class="video-js vjs-default-skin" preload="metadata" height="10%" width="10%">
+                <source src="{{path}}"/>
+            </video>
+        </a>
+        <span class="title">{{title}}</span>
+        <p>{{description}}<br>
+        </p>
+        <a href="#!" class="secondary-content">{{comments}}<i class="tiny material-icons">comment</i></a>
+    </li>
+</template>

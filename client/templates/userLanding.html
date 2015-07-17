@@ -1,15 +1,18 @@
 <template name="userLanding">
-
     <div class="flow-text">
-    <p>this is the landing page for a single user</p>
-<br>
-    <p>username: {{username}} </p>
-    <p>videos they're uploaded: in progress</p>
-    <p>videos they've favorited: in progress</p>
-    <p>groups they belong to?</p>
-    <p>other things</p>
-    <br>
-    <p>Send this user a message?</p>
+        <h4>username: {{username}}</h4>
+        <ul class="collection with-header">
+            <li class="collection-header">{{username}}'s uploads:</li>
+            <li class="collection-item">
+                {{#each myVideos}}
+                    {{> singleVideo}}
+                {{/each}}</li>
+            <li class="collection-item">{{username}}'s favorites: in progress</li>
+            <li class="collection-item">groups they belong to?</li>
+        </ul>
+
+        <br>
+        <p>Send this user a message?</p>
     </div>
 </template>
 

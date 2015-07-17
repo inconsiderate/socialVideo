@@ -37,7 +37,7 @@ Template.submitNewVideo.events({
         //        Materialize.toast(e, 4000);
         //    } else if (r.percent_uploaded == 100) {
                 Materialize.toast('Upload Successful!', 4000);
-                Meteor.call('insertVideo', title, desc, r.url);
+                Meteor.call('insertVideo', title, desc, 'google.com');
         //    }
         //});
         event.target.video_title.value = "";

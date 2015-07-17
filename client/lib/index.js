@@ -7,6 +7,12 @@ if (Meteor.isClient) {
         }
     });
 
+    Template.userLanding.helpers({
+        myVideos: function () {
+            return Videos.find({username: this.username});
+        }
+    });
+
     Template.userVideos.helpers({
         myVideos: function () {
             return Videos.find({username: Meteor.user().username});
