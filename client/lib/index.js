@@ -15,13 +15,14 @@ if (Meteor.isClient) {
 
     Template.userProfile.helpers({
         myComments: function() {
-            // TODO: return all user comments
+            return VideoComments.find({userid: this._id});
         }
     });
 
     Template.navbar.events({
         "click .login-modal": function () {
             $('.video-js').bind('contextmenu',function() { return false; });
+            $('.collapsible').collapsible();
             $('#user-account-modal').openModal();
             $('ul.tabs').tabs();
             $('input#video_title, input#video_description').characterCounter();

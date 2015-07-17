@@ -1,0 +1,93 @@
+<template name="submitNewVideo">
+    <form class="col s12 submit-video-form">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">speaker_notes</i>
+                <input id="video_title" type="text" class="validate" required length="35">
+                <label for="video_title">Title</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">speaker_notes</i>
+                <input id="video_description" type="text" class="validate" required length="145" >
+                <label for="video_description">Description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6 input-field cyan btn waves-effect waves-light">
+                <input class="file-path file_bag validate" type="file" id="file_bucket" required>
+                <span>Choose File</span>
+            </div>
+            <div class="input-field col s3 offset-s3">
+                <button class="cyan waves-effect waves-light btn" type="submit">SUBMIT</button>
+            </div>
+        </div>
+        <div id="percent_uploaded">
+            {{#with files}}
+                <p>Upload Progress: {{percent_uploaded}}</p>
+            {{/with}}
+        </div>
+    </form>
+</template>
+
+<template name="editUserProfile">
+    <form class="col s12 edit-user-form">
+        <div class="warning-block red-text">All information is OPTIONAL and may be displayed to other users!</div>
+        <div class="row">
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix">person_pin</i>
+                <input id="user_name" type="text" class="validate" length="15">
+                <label for="user_name">username</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix">speaker_notes</i>
+                <input id="user_gender" type="text" class="validate" length="15" >
+                <label for="user_gender">gender identity</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix">person_pin</i>
+                <input id="user_age" type="number" class="validate">
+                <label for="user_age">age</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix">speaker_notes</i>
+                <input id="user_something" type="text" class="validate">
+                <label for="user_something">user something</label>
+            </div>
+        </div>
+
+        <div class="row">
+        <div class="switch col s12 m6">
+            <div>Receive messages from other users?</div>
+            <label>
+                Off
+                <input type="checkbox">
+                <span class="lever"></span>
+                On
+            </label>
+        </div>
+        <div class="switch col s12 m6">
+            <div>Receive email notifications from us?</div>
+            <label>
+                Off
+                <input type="checkbox">
+                <span class="lever"></span>
+                On
+            </label>
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6 input-field cyan btn waves-effect waves-light">
+                <div>Upload new profile image:</div>
+                <input class="file-path file_bag validate" type="file" id="avatar_bucket">
+            </div>
+            <div class="input-field col s3 offset-s3">
+                <button class="cyan waves-effect waves-light btn" type="submit">save changes</button>
+            </div>
+        </div>
+    </form>
+</template>

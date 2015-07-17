@@ -1,14 +1,16 @@
 Template.searchForm.events({
     "submit .search-field-form": function (event) {
         var searchFilter = event.target.searchField.value;
-        //Pages.set({
-        //    filters: {
-        //        $text: {$search: searchFilter}
-        //    }
-        //});
+        //TODO: Create a route here for search results
         event.target.searchField.value = "";
         event.preventDefault();
         return false;
+    }
+});
+
+Template.editUserProfile.events({
+    "submit .edit-user-form": function (event) {
+        //TODO: allow users to change username and other profile settings form the user landing page.
     }
 });
 
@@ -24,19 +26,10 @@ Template.submitNewVideo.events({
         var title = event.target.video_title.value;
         var desc = event.target.video_description.value;
         var keywords = [];
-        var checkboxes = {
-            straight: event.target.keyword1.checked,
-            gay: event.target.keyword2.checked,
-            lesbian: event.target.keyword3.checked,
-            teen: event.target.keyword4.checked,
-            amateur: event.target.keyword5.checked,
-            reality: event.target.keyword6.checked,
-            group: event.target.keyword7.checked,
-            mature: event.target.keyword8.checked
-        };
+
         //S3.upload({
         //    files: files,
-        //    //TODO: Let's also upload an image or gif, once we are converting our own stuff
+        //    //TODO: Let's also upload an image or gif, creatd from frames of the video, once we are converting our own stuff
         //    path: "testvideos"
         //}, function (e, r) {
         //    if (e != null) {
