@@ -58,7 +58,7 @@ Template.newCommentModal.events({
         Meteor.call('insertVideoComment', videoid, content);
 
         event.target.content.value = "";
-        $('#newCommentModal').closeModal();
+        $('.modal').closeModal();
         event.preventDefault();
         return false;
     }

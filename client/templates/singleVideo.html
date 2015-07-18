@@ -23,15 +23,15 @@
 
 
 <template name="smallVideoCard">
-    <li class="collection-item avatar">
-        <a href="/videos/{{_id}}">
-            <video id="{{_id}}" class="video-js vjs-default-skin" preload="metadata" height="10%" width="10%">
-                <source src="{{path}}"/>
-            </video>
-        </a>
+    <div class="row">
+        <video id="{{_id}}" class="circle left col s4 video-js vjs-default-skin" preload="metadata" height="100%" width="50%">
+            <source src="/videos/mpegsample.mp4"/>
+        </video>
+    <a href="/videos/{{_id}}" class="right col s8 collection-item">
         <span class="title">{{title}}</span>
         <p>{{description}}<br>
         </p>
-        <a href="#!" class="secondary-content">{{comments}}<i class="tiny material-icons">comment</i></a>
-    </li>
+        <div class="secondary-content">{{comments}}<i class="tiny material-icons">comment</i></div>
+        </a>
+</div>
 </template>
