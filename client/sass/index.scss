@@ -22,16 +22,17 @@ body {
     padding-right: 10px;
 }
 
-.tabs .indicator {
-    background-color: #0D47A1;
+.indicator {
+    background-color: $background-color-primary;
 }
 
 #right-navbar {
     margin-right: 10px;
 }
 
-#at-nav-button {
-    background-color: #0D47A1;
+#at-nav-button, #at-btn {
+    background-color: $background-color-primary;
+    color: white;
 }
 
 nav.submenu-tabs {

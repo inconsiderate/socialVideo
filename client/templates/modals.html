@@ -31,7 +31,7 @@
 </template>
 
 <template name="newCommentModal">
-    <div id="newCommentModal" class="flow-text modal">
+    <div id="newCommentModal" class="modal">
         <div class="modal-content white row">
             <h4 class="center text-primary">Leave a Comment!</h4>
             <form class="col s12 submit-video-comment">
@@ -39,8 +39,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">speaker_notes</i>
-                        <input id="content" type="text" length="400" class="validate" required/>
-                        <label for="content">Comment:</label>
+                        <textarea id="newcomment-content" class="materialize-textarea validate" length="400" required></textarea>
+                        <label for="newcomment-content">Comment:</label>
                     </div>
                 </div>
                 <div class="input-field col s12 right">
