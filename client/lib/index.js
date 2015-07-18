@@ -28,9 +28,8 @@ if (Meteor.isClient) {
     Template.navbar.events({
         "click .login-modal": function () {
             $('.video-js').bind('contextmenu',function() { return false; });
+            $('#user-navbar').tabs();
             $('.collapsible').collapsible();
-            $('#user-account-modal').openModal();
-            $('ul.tabs').tabs();
             $('input#video_title, input#video_description').characterCounter();
             $('.dropdown-button').dropdown({
                     inDuration: 800,
@@ -43,6 +42,7 @@ if (Meteor.isClient) {
             );
             videojs(document.getElementsByClassName('video-js')[0], {}, function() {
             });
+            $('#user-account-modal').openModal();
         }
     });
 }

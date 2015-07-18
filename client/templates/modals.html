@@ -4,7 +4,7 @@
             {{#if currentUser}}
                 <div class="row">
                     <div class="col s12">
-                        <ul class="tabs white">
+                        <ul class="tabs white" id="user-navbar">
                             <li class="tab col s3"><a class="text-primary active" href="#userProfileLink">Profile</a>
                             </li>
                             <li class="tab col s3"><a class="text-primary" href="#userFriendLink">Friends</a></li>
@@ -39,8 +39,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">speaker_notes</i>
-                        <textarea id="newcomment-content" class="materialize-textarea validate" length="400" required></textarea>
-                        <label for="newcomment-content">Comment:</label>
+                        <input id="content" type="text" length="400" class="validate" required autofocus/>
+                        <label for="content">Comment:</label>
                     </div>
                 </div>
                 <div class="input-field col s12 right">
