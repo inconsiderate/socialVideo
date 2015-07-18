@@ -32,7 +32,7 @@ Template.videoLanding.onRendered(function () {
 
 Template.videoLanding.helpers({
     allComments: function() {
-        return VideoComments.find({videoid: this._id}, {sort: {createdAt: -1}});
+        return VideoComments.find({videoid: this._id}, {sort: {creatvedAt: -1}});
 
     }
 });
