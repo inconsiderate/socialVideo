@@ -25,11 +25,6 @@ Template.videosRandom.helpers({
     }
 });
 
-Template.videoLanding.onRendered(function () {
-    videojs(document.getElementsByClassName('singleVideoSecret')[0], {}, function() {
-    });
-});
-
 Template.videoLanding.helpers({
     allComments: function() {
         return VideoComments.find({videoid: this._id}, {sort: {creatvedAt: -1}});

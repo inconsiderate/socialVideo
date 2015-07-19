@@ -28,11 +28,11 @@ Template.submitNewVideo.events({
 
         S3.upload({
             files: files,
-            //TODO: Let's also upload an image or gif, creatd from frames of the video, once we are converting our own stuff
-            path: "testvideos"
+            //TODO: Let's also upload an image or gif, created from frames of the video, once we are converting our own stuff
+            path: "prodvideos"
         }, function (e, r) {
             if (e != null) {
-                Materialize.toast('Upload failed for some reason.', 4000);
+                Materialize.toast('Upload failed for some reason. Please try again.', 4000);
                 Materialize.toast(e, 4000);
             } else if (r.percent_uploaded == 100) {
                 Materialize.toast('Upload Successful!', 4000);

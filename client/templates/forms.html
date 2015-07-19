@@ -24,9 +24,9 @@
             </div>
         </div>
         <div id="percent_uploaded">
-            {{#with files}}
+            {{#each files}}
                 <p>Upload Progress: {{percent_uploaded}}</p>
-            {{/with}}
+            {{/each}}
         </div>
     </form>
 </template>
