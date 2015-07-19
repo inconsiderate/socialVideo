@@ -8,6 +8,11 @@ body {
     color: $font-color-primary;
 }
 
+
+.text-secondary {
+    color: $background-color-primary;
+}
+
 .background-primary {
     background-color: $background-color-primary;
 }
@@ -30,9 +35,13 @@ body {
     margin-right: 10px;
 }
 
-#at-nav-button, #at-btn {
-    background-color: $background-color-primary;
-    color: white;
+.btn {
+    background-color: $button-color;
+    color: $background-color-primary;
+}
+
+.input-field label {
+    color: $background-color-primary;
 }
 
 nav.submenu-tabs {

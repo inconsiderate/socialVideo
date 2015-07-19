@@ -1,5 +1,5 @@
 
-var N = 10;
+var N = 1;
 
 if (Meteor.isServer && Videos.find().count() < N) {
     Videos.remove({});

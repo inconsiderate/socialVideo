@@ -8,7 +8,7 @@
             </a>
         </div>
         <div class="card-content">
-            <span class="card-title grey-text text-darken-4 truncate">{{title}}</span>
+            <span class="grey-text text-darken-4 truncate">{{title}}</span>
 
             <p class="truncate">{{description}}</p>
 
@@ -24,8 +24,8 @@
 
 <template name="smallVideoCard">
     <div class="row">
-        <video id="{{_id}}" class="circle left col s4 video-js vjs-default-skin" preload="metadata" height="100%" width="50%">
-            <source src="/videos/mpegsample.mp4"/>
+        <video id="{{_id}}" class="left col s4 video-js vjs-default-skin" preload="metadata" height="100%" width="50%">
+            <source src="{{path}}"/>
         </video>
     <a href="/videos/{{_id}}" class="right col s8 collection-item">
         <span class="title">{{title}}</span>

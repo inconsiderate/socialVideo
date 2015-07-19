@@ -2,16 +2,16 @@
     <div class="navbar-fixed">
         <nav>
             <div class="hoverable nav-wrapper background-primary">
-                <a href="/" class="white-text brand-logo center hide-on-med-and-down">daddy issues</a>
+                <a href="/" class="text-primary brand-logo center hide-on-med-and-down">daddy issues</a>
 
-                <a href="#" data-activates="slide-out" class="button-collapse"><i class="white-text material-icons">menu</i></a>
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="text-primary material-icons">menu</i></a>
                 <ul class="left">
                     {{>searchForm}}
                 </ul>
                 <ul id="right-navbar" class="right hide-on-med-and-down">
-                    <li><a class="white-text" href="/legal">legal</a></li>
-                    <li><a class="white-text" href="/aboutus">about us</a></li>
-                    <button class="background-primary login-modal waves-effect waves-light btn">
+                    <li><a class="text-primary" href="/legal">legal</a></li>
+                    <li><a class="text-primary" href="/aboutus">about us</a></li>
+                    <button class=" login-modal waves-effect waves-light btn">
                         {{#if currentUser}} my account
                         {{else}}
                             sign in
@@ -19,13 +19,13 @@
                     </button>
                 </ul>
                 <ul class="right hide-on-large-only">
-                    <button class="background-primary login-modal waves-effect waves-light btn">
+                    <button class="login-modal waves-effect waves-light btn">
                         {{#if currentUser}} my account
                         {{else}}
                             sign in
                         {{/if}}
                     </button>
-                    <a href="#" class="cyan-text left hide-on-large-only">daddy issues</a>
+                    <a href="#" class="text-primary left hide-on-large-only">daddy issues</a>
                 </ul>
                 <ul class="side-nav" id="slide-out">
                     <li><a href="#filter1">Filter 1</a></li>
@@ -59,10 +59,10 @@
 <template name="navbar2">
     <div class="hide-on-med-and-down nav-wrapper white">
         <ul class="tabs white row" id="primary-navbar">
-            <li class="col s3 tab"><a class="text-primary" href="#videosnewest">Newest</a></li>
-            <li class="col s3 tab"><a class="text-primary active" href="#videospopular">Popular</a></li>
-            <li class="col s3 tab"><a class="text-primary" href="#videosrated">Lowest Rated</a></li>
-            <li class="col s3 tab"><a class="text-primary" href="#videosrandom">Random</a></li>
+            <li class="col s3 tab"><a class="text-secondary" href="#videosnewest">Newest</a></li>
+            <li class="col s3 tab"><a class="text-secondary active" href="#videospopular">Popular</a></li>
+            <li class="col s3 tab"><a class="text-secondary" href="#videosrated">Lowest Rated</a></li>
+            <li class="col s3 tab"><a class="text-secondary" href="#videosrandom">Random</a></li>
         </ul>
     </div>
     <div id="videosnewest" class="col s12">{{> videosNewest}}</div>

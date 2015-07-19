@@ -22,33 +22,32 @@ Template.submitNewVideo.helpers({
 
 Template.submitNewVideo.events({
     "submit .submit-video-form": function (event) {
-        var files = $("input[type='file']")[0].files;
+        var files = $("#file_bucket")[0].files;
         var title = event.target.video_title.value;
         var desc = event.target.video_description.value;
-        var keywords = [];
 
-        //S3.upload({
-        //    files: files,
-        //    //TODO: Let's also upload an image or gif, creatd from frames of the video, once we are converting our own stuff
-        //    path: "testvideos"
-        //}, function (e, r) {
-        //    if (e != null) {
-        //        Materialize.toast('Upload failed for some reason.', 4000);
-        //        Materialize.toast(e, 4000);
-        //    } else if (r.percent_uploaded == 100) {
+        S3.upload({
+            files: files,
+            //TODO: Let's also upload an image or gif, creatd from frames of the video, once we are converting our own stuff
+            path: "testvideos"
+        }, function (e, r) {
+            if (e != null) {
+                Materialize.toast('Upload failed for some reason.', 4000);
+                Materialize.toast(e, 4000);
+            } else if (r.percent_uploaded == 100) {
                 Materialize.toast('Upload Successful!', 4000);
-                Meteor.call('insertVideo', title, desc, 'google.com');
-        //    }
-        //});
+                Meteor.call('insertVideo', title, desc, r.url);
+            }
+        });
         event.target.video_title.value = "";
         event.target.video_description.value = "";
         $('input[type="checkbox"]').removeAttr('checked');
         $("#file_bucket").val("");
+        $('.video-js').bind('contextmenu',function() { return false; });
         event.preventDefault();
         return false;
     }
 });
-
 
 Template.newCommentModal.events({
     "submit .submit-video-comment": function (event) {
@@ -56,7 +55,6 @@ Template.newCommentModal.events({
         var videoid = event.target.videoid.value;
         console.log(content, videoid);
         Meteor.call('insertVideoComment', videoid, content);
-
         event.target.content.value = "";
         $('.modal').closeModal();
         event.preventDefault();
