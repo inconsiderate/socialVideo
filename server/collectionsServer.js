@@ -50,7 +50,7 @@ Meteor.methods({
     },
 
     deleteVideoComment: function (videoid, commentid) {
-        //TODO: check that user owns this comment
+
         VideoComments.remove({
             _id: commentid
         });

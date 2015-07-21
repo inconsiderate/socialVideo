@@ -14,9 +14,7 @@
 
         </div>
         <div class="card-action valign-wrapper">
-            <span class="badge right valign">{{comments}}<i class="tiny material-icons">comment</i></span>
-
-            <span class="truncate left valign">by: <a href="users/{{username}}">{{username}}</a></span>
+            <span class="truncate left valign">by: <a href="users/{{username}}">{{username}}</a></span>                    <span class="badge valign right">{{comments}}<i class="new-comments-badges tiny material-icons">comment</i>{{likes}}<i class="new-comments-badges tiny material-icons">thumb_up</i></span>
         </div>
     </div>
 </template>
@@ -27,11 +25,14 @@
         <video id="{{_id}}" class="left col s4 video-js vjs-default-skin" preload="metadata" height="100%" width="50%">
             <source src="{{path}}"/>
         </video>
-    <a href="/videos/{{_id}}" class="right col s8 collection-item">
+    <a href="/videos/{{_id}}" class="col s8 collection-item">
         <span class="title">{{title}}</span>
         <p>{{description}}<br>
         </p>
-        <div class="secondary-content">{{comments}}<i class="tiny material-icons">comment</i></div>
-        </a>
+        <div class="secondary-content">
+            <span class="badge valign right">{{comments}}<i class="new-comments-badges tiny material-icons">comment</i>{{likes}}<i class="new-comments-badges tiny material-icons">thumb_up</i></span><br>
+            <button class="right deleteVideo background-primary waves-effect waves-light btn" type="submit"> delete</button>
+        </div>
+    </a>
 </div>
 </template>

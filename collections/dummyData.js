@@ -12,7 +12,8 @@ if (Meteor.isServer && Videos.find().count() < N) {
             description: 'This is our sample video and a longer sample description because sometimes people like to type a lot.',
             createdAt: new Date(),
             username: 'andrew',
-            likes: Math.floor((Math.random() * 1000) + 1)
+            likes: Math.floor((Math.random() * 1000) + 1),
+            comments: 0
         });
     }
     for (i = 0; i < N; i++) {
@@ -23,7 +24,8 @@ if (Meteor.isServer && Videos.find().count() < N) {
             description: 'something more aweomse',
             createdAt: new Date(),
             username: 'tom',
-            likes: Math.floor((Math.random() * 1000) + 1)
+            likes: Math.floor((Math.random() * 1000) + 1),
+            comments: 0
         });
     }
     for (i = 0; i < N; i++) {
@@ -34,7 +36,8 @@ if (Meteor.isServer && Videos.find().count() < N) {
             description: 'This is video number four.',
             createdAt: new Date(),
             username: 'mike',
-            likes: Math.floor((Math.random() * 1000) + 1)
+            likes: Math.floor((Math.random() * 1000) + 1),
+            comments: 0
         });
     }
     for (i = 0; i < N; i++) {
@@ -45,7 +48,8 @@ if (Meteor.isServer && Videos.find().count() < N) {
             description: 'im a pinball wizard or something. boobs.',
             createdAt: new Date(),
             username: 'maggie',
-            likes: Math.floor((Math.random() * 1000) + 1)
+            likes: Math.floor((Math.random() * 1000) + 1),
+            comments: 0
         });
     }
 

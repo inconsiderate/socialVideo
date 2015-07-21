@@ -29,13 +29,13 @@ Template.submitNewVideo.events({
         S3.upload({
             files: files,
             //TODO: Let's also upload an image or gif, created from frames of the video, once we are converting our own stuff
-            path: "prodvideos"
+            path: "testvideos"
         }, function (e, r) {
             if (e != null) {
-                Materialize.toast('Upload failed for some reason. Please try again.', 4000);
-                Materialize.toast(e, 4000);
+                Materialize.toast('Upload failed for some reason. Please try again.', 6000);
+                Materialize.toast(e, 6000);
             } else if (r.percent_uploaded == 100) {
-                Materialize.toast('Upload Successful!', 4000);
+                Materialize.toast('Upload Successful!', 6000);
                 Meteor.call('insertVideo', title, desc, r.url);
             }
         });
@@ -49,11 +49,33 @@ Template.submitNewVideo.events({
     }
 });
 
+Template.deleteVideo.events({
+    "submit .delete-video-form": function (event) {
+        var videoid = event.target.videoid.value;
+
+
+        //S3.upload({
+        //    files: files,
+        //    path: "testvideos"
+        //}, function (e, r) {
+        //    if (e != null) {
+        //        Materialize.toast('Upload failed for some reason. Please try again.', 4000);
+        //        Materialize.toast(e, 6000);
+        //    } else if (r.percent_uploaded == 100) {
+                Materialize.toast('Video Deleted!', 6000);
+                Meteor.call('insertVideo', title, desc, r.url);
+        //    }
+        //});
+        event.target.video_title.value = "";
+        event.preventDefault();
+        return false;
+    }
+});
+
 Template.newCommentModal.events({
     "submit .submit-video-comment": function (event) {
         var content = event.target.content.value;
         var videoid = event.target.videoid.value;
-        console.log(content, videoid);
         Meteor.call('insertVideoComment', videoid, content);
         event.target.content.value = "";
         $('.modal').closeModal();
@@ -62,6 +84,14 @@ Template.newCommentModal.events({
     }
 });
 
-
+//Template.deleteComment.events({
+//    "submit .delete-video-comment": function (event) {
+//        var commentid = event.target.content.value;
+//        console.log(commendid);
+//        Meteor.call('deleteVideoComment', commentid);
+//        event.target.content.value = "";
+//        return false;
+//    }
+//});
 
 

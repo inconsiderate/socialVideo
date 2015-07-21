@@ -32,8 +32,7 @@
         <div class="col s12">
             <div class="card">
                 <div class="card-image">
-                    <video id="{{_id}}" class="video-js vjs-default-skin" controls preload="metadata" height="100%"
-                           width="100%">
+                    <video id="{{_id}}" class="video-js vjs-default-skin" controls preload="metadata" height="100%" width="100%">
                         <source src="{{path}}"/>
                     </video>
                 </div>
@@ -41,10 +40,9 @@
                     <p>{{description}}</p>
                 </div>
                 <div class="card-action valign-wrapper">
-                    <span class="badge valign">{{comments}}<i class="tiny material-icons right">comment</i><br>{{likes}}
-                        <i class="tiny material-icons right">thumb_up</i></span>
-
                     <span class="left valign">by: <a href="/users/{{username}}">{{username}}</a></span>
+
+                    <span class="badge valign right">{{comments}}<i class="new-comments-badges tiny material-icons">comment</i>{{likes}}<i class="new-comments-badges tiny material-icons">thumb_up</i></span>
                 </div>
             </div>
         </div>
