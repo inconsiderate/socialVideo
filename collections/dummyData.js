@@ -1,60 +1,128 @@
 
-var N = 1;
 
-if (Meteor.isServer && Videos.find().count() < N) {
+if (Meteor.isServer && Videos.find().count() < 12) {
     Videos.remove({});
-
-    for (i = 0; i < N; i++) {
-        Videos.insert({
-            path: 'videos/mpegsample.mp4',
-            title: 'Weird Mpeg Sample Video',
-            keywords: 'sample test lego sfw',
-            description: 'This is our sample video and a longer sample description because sometimes people like to type a lot.',
-            createdAt: new Date(),
-            username: 'andrew',
-            likes: Math.floor((Math.random() * 1000) + 1),
-            comments: 0
-        });
-    }
-    for (i = 0; i < N; i++) {
-        Videos.insert({
-            path: 'videos/mpegsample.mp4',
-            title: 'something something something',
-            keywords: 'thai twogirls',
-            description: 'something more aweomse',
-            createdAt: new Date(),
-            username: 'tom',
-            likes: Math.floor((Math.random() * 1000) + 1),
-            comments: 0
-        });
-    }
-    for (i = 0; i < N; i++) {
-        Videos.insert({
-            path: 'videos/mpegsample.mp4',
-            title: 'this is the fourth video!',
-            keywords: 'video sexy fourth',
-            description: 'This is video number four.',
-            createdAt: new Date(),
-            username: 'mike',
-            likes: Math.floor((Math.random() * 1000) + 1),
-            comments: 0
-        });
-    }
-    for (i = 0; i < N; i++) {
-        Videos.insert({
-            path: 'videos/mpegsample.mp4',
-            title: 'this is lego',
-            keywords: 'lego',
-            description: 'im a pinball wizard or something. boobs.',
-            createdAt: new Date(),
-            username: 'maggie',
-            likes: Math.floor((Math.random() * 1000) + 1),
-            comments: 0
-        });
-    }
-
     VideoComments.remove({});
-
     UserProfileComments.remove({});
-    //TODO: create dummy user profile comments
+
+
+    Videos.insert({
+        path: 'http://s3.amazonaws.com/daddyissues/testvideos/video1.mp4',
+        title: 'Test Video 1',
+        description: 'This is our sample video and a longer sample description because sometimes people like to type a lot of really stupid shit that no one cares about. Yup.',
+        createdAt: new Date(),
+        username: 'andrew',
+        likes: Math.floor((Math.random() * 100) + 1),
+        comments: 0
+    });
+
+    Videos.insert({
+        path: 'http://s3.amazonaws.com/daddyissues/testvideos/video2.mp4',
+        title: 'Test Video 2',
+        description: 'something more aweomse',
+        createdAt: new Date(),
+        username: 'tom',
+        likes: Math.floor((Math.random() * 100) + 1),
+        comments: 0
+    });
+
+    Videos.insert({
+        path: 'http://s3.amazonaws.com/daddyissues/testvideos/video3.mp4',
+        title: 'Test Video 3',
+        description: 'This is video number three.',
+        createdAt: new Date(),
+        username: 'mike',
+        likes: Math.floor((Math.random() * 100) + 1),
+        comments: 0
+    });
+
+    Videos.insert({
+        path: 'http://s3.amazonaws.com/daddyissues/testvideos/video4.mp4',
+        title: 'Test Video 4',
+        description: 'im a pinball wizard or something. boobs.',
+        createdAt: new Date(),
+        username: 'maggie',
+        likes: Math.floor((Math.random() * 10) + 1),
+        comments: 0
+    });
+
+    Videos.insert({
+        path: 'http://s3.amazonaws.com/daddyissues/testvideos/video5.mp4',
+        title: 'Test Video 5',
+        description: 'im a pinball wizard or something. boobs.',
+        createdAt: new Date(),
+        username: 'maggie',
+        likes: Math.floor((Math.random() * 10) + 1),
+        comments: 0
+    });
+
+    Videos.insert({
+        path: 'http://s3.amazonaws.com/daddyissues/testvideos/video6.mp4',
+        title: 'Test Video 6',
+        description: 'im a pinball wizard or something. boobs.',
+        createdAt: new Date(),
+        username: 'maggie',
+        likes: Math.floor((Math.random() * 10) + 1),
+        comments: 0
+    });
+
+    Videos.insert({
+        path: 'http://s3.amazonaws.com/daddyissues/testvideos/video7.mp4',
+        title: 'Test Video 7',
+        description: 'im a pinball wizard or something. boobs.',
+        createdAt: new Date(),
+        username: 'maggie',
+        likes: Math.floor((Math.random() * 10) + 1),
+        comments: 0
+    });
+
+    Videos.insert({
+        path: 'http://s3.amazonaws.com/daddyissues/testvideos/video8.mp4',
+        title: 'Test Video 8',
+        description: 'im a pinball wizard or something. boobs.',
+        createdAt: new Date(),
+        username: 'maggie',
+        likes: Math.floor((Math.random() * 10) + 1),
+        comments: 0
+    });
+
+    Videos.insert({
+        path: 'http://s3.amazonaws.com/daddyissues/testvideos/video9.mp4',
+        title: 'Test Video 9',
+        description: 'im a pinball wizard or something. boobs.',
+        createdAt: new Date(),
+        username: 'maggie',
+        likes: Math.floor((Math.random() * 10) + 1),
+        comments: 0
+    });
+
+    Videos.insert({
+        path: 'http://s3.amazonaws.com/daddyissues/testvideos/video10.mp4',
+        title: 'Test Video 10',
+        description: 'im a pinball wizard or something. boobs.',
+        createdAt: new Date(),
+        username: 'maggie',
+        likes: Math.floor((Math.random() * 10) + 1),
+        comments: 0
+    });
+
+    Videos.insert({
+        path: 'http://s3.amazonaws.com/daddyissues/testvideos/video11.mp4',
+        title: 'Test Video 11',
+        description: 'im a pinball wizard or something. boobs.',
+        createdAt: new Date(),
+        username: 'maggie',
+        likes: Math.floor((Math.random() * 10) + 1),
+        comments: 0
+    });
+
+    Videos.insert({
+        path: 'http://s3.amazonaws.com/daddyissues/testvideos/video12.mp4',
+        title: 'Test Video 12',
+        description: 'im a pinball wizard or something. boobs.',
+        createdAt: new Date(),
+        username: 'maggie',
+        likes: Math.floor((Math.random() * 10) + 1),
+        comments: 0
+    });
 }

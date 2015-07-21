@@ -28,7 +28,6 @@ Template.videosRandom.helpers({
 Template.videoLanding.helpers({
     allComments: function() {
         return VideoComments.find({videoid: this._id}, {sort: {creatvedAt: -1}});
-
     }
 });
 

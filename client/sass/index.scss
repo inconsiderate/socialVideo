@@ -64,3 +64,7 @@ nav.submenu-tabs {
 a {
     color: #0D47A1;
 }
+
+video.loading {
+    background: black url("/images/loading#{random(10)}.gif") center center no-repeat;
+}
