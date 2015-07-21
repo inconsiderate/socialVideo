@@ -1,9 +1,8 @@
 if (Meteor.isClient) {
 
-    Template.body.events({
-        "click a": function() {
-            $('.video-js').bind('contextmenu',function() { return false; });
-            $('ul.tabs').tabs();
+    Template.userLanding.helpers({
+        myVideos: function () {
+            return Videos.find({username: this.username});
         }
     });
 
@@ -15,15 +14,15 @@ if (Meteor.isClient) {
 
     Template.userProfile.helpers({
         myComments: function() {
-            // TODO: return all user comments
+            return VideoComments.find({userid: this._id});
         }
     });
 
     Template.navbar.events({
         "click .login-modal": function () {
             $('.video-js').bind('contextmenu',function() { return false; });
-            $('#user-account-modal').openModal();
-            $('ul.tabs').tabs();
+            $('#user-navbar').tabs();
+            $('.collapsible').collapsible();
             $('input#video_title, input#video_description').characterCounter();
             $('.dropdown-button').dropdown({
                     inDuration: 800,
@@ -34,8 +33,7 @@ if (Meteor.isClient) {
                     belowOrigin: true //
                 }
             );
-            videojs(document.getElementsByClassName('video-js')[0], {}, function() {
-            });
+            $('#user-account-modal').openModal();
         }
     });
 }

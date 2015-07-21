@@ -1,6 +1,32 @@
+@import '_mixins';
 
 body {
     background-color: #fff;
+}
+
+.card {
+    .card-content {
+        padding: 10px;
+    }
+    .card-action {
+        padding: 10px;
+    }
+}
+
+.text-primary {
+    color: $font-color-primary;
+}
+
+span .new-comments-badges {
+    padding: 5px;
+}
+
+.text-secondary {
+    color: $background-color-primary;
+}
+
+.background-primary {
+    background-color: $background-color-primary;
 }
 
 .videoContainer {
@@ -13,16 +39,21 @@ body {
     padding-right: 10px;
 }
 
-.tabs .indicator {
-    background-color: #00bcd4;
+.indicator {
+    background-color: $background-color-primary;
 }
 
 #right-navbar {
     margin-right: 10px;
 }
 
-#at-nav-button {
-    background-color: #00bcd4;
+.btn {
+    background-color: $button-color;
+    color: $background-color-primary;
+}
+
+.input-field label {
+    color: $background-color-primary;
 }
 
 nav.submenu-tabs {
@@ -30,3 +61,6 @@ nav.submenu-tabs {
     height: 40px;
 }
 
+a {
+    color: #0D47A1;
+}

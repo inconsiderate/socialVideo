@@ -1,11 +1,24 @@
 <template name="userProfile">
-    <br>
-    <strong>Hello, {{currentUser.username}}!</strong>
-    <br>
-    <p>This is your user profile.</p>
-    <p>There's nothing here yet, but we're working on it. Right now we're focusing on the videos, and not really worrying about the social stuff too much. Suggestions on how we could improve or impletment things are welcome!</p>
+    <div class="row">
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="right collapsible-header"><i class="material-icons">whatshot</i>Edit Your Profile</div>
+                <div class="collapsible-body">
+                    {{>editUserProfile}}
+                </div>
+            </li>
+        </ul>
+    </div>
 
+    <div class="flow-text">
+        <br>
+        <strong>Hello, {{currentUser.username}}!</strong>
+        <br>
 
+        <p>There's not much here yet, but we're working on it. Right now we're focusing on the videos, and not really
+            worrying about the social stuff too much. Suggestions on how we could improve or implement things are
+            welcome!</p>
 
-    <a href="users/{{currentUser.username}}">How Others See Your Profile</a>
+        <a href="/users/{{currentUser.username}}">How Others See Your Profile</a>
+    </div>
 </template>

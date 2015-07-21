@@ -1,12 +1,10 @@
 <template name="videosNewest">
-    <p>This is the single newest video</p>
     {{#with newestVideo}}
         {{> singleVideo}}
     {{/with}}
 </template>
 
 <template name="videosPopular">
-    <p>These are the videos sorted by popularity</p>
     <div class="videoContainer row">
         {{#each popularVideos}}
             {{> singleVideo}}
@@ -15,7 +13,6 @@
 </template>
 
 <template name="videosRated">
-    <p>These are the videos sorted by rating</p>
     <div class="videoContainer row">
         {{#each ratedVideos}}
             {{> singleVideo}}
@@ -24,27 +21,44 @@
 </template>
 
 <template name="videosRandom">
-    <p>This is a single random video</p>
     {{#each randomVideo}}
         {{> singleVideo}}
     {{/each}}
 </template>
 
 <template name="videoLanding">
-    <p>{{title}}</p>
-    <video id="{{_id}}" class="video-js vjs-default-skin" controls preload="metadata" height="100%" width="100%"> <source src="{{path}}"/></video>
 
-    <p></p>
-    <p></p>
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-image">
+                    <video id="{{_id}}" class="video-js vjs-default-skin" controls preload="metadata" height="100%" width="100%">
+                        <source src="{{path}}"/>
+                    </video>
+                </div>
+                <div class="card-content">
+                    <p>{{description}}</p>
+                </div>
+                <div class="card-action valign-wrapper">
+                    <span class="left valign">by: <a href="/users/{{username}}">{{username}}</a></span>
+
+                    <span class="badge valign right">{{comments}}<i class="new-comments-badges tiny material-icons">comment</i>{{likes}}<i class="new-comments-badges tiny material-icons">thumb_up</i></span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     {{#if currentUser}}
-    <button class="right createComment cyan waves-effect waves-light btn" type="submit">New Comment</button>
-        {{/if}}
-<br><br><br>
+        <div class="row">
+            <button class="right col offset-8 s4 createComment background-primary waves-effect waves-light btn"
+                    type="submit">New Comment
+            </button>
+        </div>
+    {{/if}}
     <div class="commentContainer row">
-    {{#each allComments}}
-        {{> singleComment }}
-    {{/each}}
+        {{#each allComments}}
+            {{> singleComment }}
+        {{/each}}
     </div>
 
     {{>newCommentModal}}
