@@ -1,0 +1,9 @@
+<template name="admin">
+    <div class="row">
+        <P>ALL OF THE USERS</P>
+        {{#each user}}
+            {{>adminPanelUser}}
+        {{/each}}
+        <P>ALL OF THE VIDEOS</P>
+    </div>
+</template>

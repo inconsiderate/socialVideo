@@ -52,8 +52,7 @@ if (Meteor.isServer && Videos.find().count() < N) {
             comments: 0
         });
     }
-
-
+    
     VideoComments.remove({});
 
     UserProfileComments.remove({});

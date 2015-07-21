@@ -27,13 +27,16 @@ Meteor.methods({
         });
     },
     deleteVideo: function (videoid) {
-        //TODO: check that user owns this video
+
         Videos.remove({
             _id: videoid
         });
         VideoComments.remove({
             videoid: videoid
         });
+
+        return 'video deleted';
+
     },
 
     insertVideoComment: function (videoid, content) {

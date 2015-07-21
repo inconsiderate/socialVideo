@@ -43,30 +43,39 @@ Template.submitNewVideo.events({
         event.target.video_description.value = "";
         $('input[type="checkbox"]').removeAttr('checked');
         $("#file_bucket").val("");
-        $('.video-js').bind('contextmenu',function() { return false; });
+        $('.video-js').bind('contextmenu', function () {
+            return false;
+        });
         event.preventDefault();
         return false;
     }
 });
 
-Template.deleteVideo.events({
+Template.smallVideoCard.events({
     "submit .delete-video-form": function (event) {
-        var videoid = event.target.videoid.value;
+        var videoid = event.target.videoid.value,
+            thisVideo = Videos.findOne({_id: videoid}),
+            url = "/"+Meteor.settings.S3Bucket+"/" + thisVideo.path.toString().split("/")[5];
 
-
-        //S3.upload({
-        //    files: files,
-        //    path: "testvideos"
-        //}, function (e, r) {
-        //    if (e != null) {
-        //        Materialize.toast('Upload failed for some reason. Please try again.', 4000);
-        //        Materialize.toast(e, 6000);
-        //    } else if (r.percent_uploaded == 100) {
-                Materialize.toast('Video Deleted!', 6000);
-                Meteor.call('insertVideo', title, desc, r.url);
-        //    }
-        //});
-        event.target.video_title.value = "";
+        if (thisVideo.owner == Meteor.userId()) {
+            S3.delete(url, function (err, res) {
+                if (err != null) {
+                    Meteor.call('deleteVideo', videoid, function (err, data) {
+                        if (err != null) {
+                            console.log(data);
+                            Materialize.toast("Video deleted!", 4000);
+                        } else {
+                            Materialize.toast('Your video was deleted from our server, but the link was not from the local host. Rest assured that the video is actually gone. This problem is being investigated.', 6000);
+                        }
+                    });
+                } else {
+                    Materialize.toast("There was a problem deleting your video. Please try again.", 4000);
+                }
+            });
+        } else {
+            Materialize.toast("You don't have permission to delete this file. How did you get in here, anways? HAX0R ALERT", 6000);
+        }
+        event.target.videoid.value = "";
         event.preventDefault();
         return false;
     }
