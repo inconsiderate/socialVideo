@@ -36,4 +36,9 @@ if (Meteor.isClient) {
             $('#user-account-modal').openModal();
         }
     });
+
+    Template.registerHelper('equals', function (a, b) {
+        return a === b;
+    });
+
 }

@@ -52,12 +52,12 @@ Meteor.methods({
         })
     },
 
-    deleteVideoComment: function (videoid, commentid) {
-
+    deleteVideoComment: function (commentid) {
+        var comment = VideoComments.findOne({_id: commentid});
         VideoComments.remove({
             _id: commentid
         });
-        Videos.update(videoid, {
+        Videos.update(comment.videoid, {
             $inc: {comments: -1}
         })
     }

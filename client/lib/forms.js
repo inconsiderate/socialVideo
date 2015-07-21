@@ -73,7 +73,7 @@ Template.smallVideoCard.events({
                 }
             });
         } else {
-            Materialize.toast("You don't have permission to delete this file. How did you get in here, anways? HAX0R ALERT", 6000);
+            Materialize.toast("You don't have permission to delete this file. How did you get in here, anyway? HAX0R ALERT", 6000);
         }
         event.target.videoid.value = "";
         event.preventDefault();
@@ -87,20 +87,18 @@ Template.newCommentModal.events({
         var videoid = event.target.videoid.value;
         Meteor.call('insertVideoComment', videoid, content);
         event.target.content.value = "";
-        $('.modal').closeModal();
-        event.preventDefault();
+        $('#newCommentModal').closeModal();
         return false;
     }
 });
 
-//Template.deleteComment.events({
-//    "submit .delete-video-comment": function (event) {
-//        var commentid = event.target.content.value;
-//        console.log(commendid);
-//        Meteor.call('deleteVideoComment', commentid);
-//        event.target.content.value = "";
-//        return false;
-//    }
-//});
+Template.singleComment.events({
+    "submit .delete-comment-form": function (event) {
+        var commentid = event.target.commentid.value;
+        Meteor.call('deleteVideoComment', commentid);
+        event.preventDefault();
+        return false;
+    }
+});
 
 
