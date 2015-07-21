@@ -14,6 +14,7 @@ Videos._ensureIndex( { "$**": "text" } );
 
 Meteor.methods({
     insertVideo: function (title, desc, url) {
+        var userIP = this.connection.clientAddress
         Videos.insert({
             title: title,
             path: url,
@@ -25,6 +26,11 @@ Meteor.methods({
             comments: 0,
             likes: 0
         });
+        Meteor.users.update({_id:Meteor.user()._id},
+            {$set:
+                {"profile.ip": userIP}
+            }
+        );
     },
     deleteVideo: function (videoid) {
 
