@@ -66,5 +66,9 @@ a {
 }
 
 video.loading {
-    background: black url("/images/loading.gif") center center no-repeat;
+    background: white url("/images/loading.gif") center center no-repeat;
+}
+
+video.loaded {
+    background: white url("/images/play.gif") center center no-repeat;
 }
