@@ -91,7 +91,7 @@ if (Meteor.isServer && Videos.find().count() < 12) {
         title: 'Test Video 9',
         description: 'im a pinball wizard or something. boobs.',
         createdAt: new Date(),
-        username: 'maggie',
+        username: 'other maggie',
         likes: Math.floor((Math.random() * 10) + 1),
         comments: 0
     });
@@ -111,7 +111,7 @@ if (Meteor.isServer && Videos.find().count() < 12) {
         title: 'Test Video 11',
         description: 'im a pinball wizard or something. boobs.',
         createdAt: new Date(),
-        username: 'maggie',
+        username: 'tom',
         likes: Math.floor((Math.random() * 10) + 1),
         comments: 0
     });
@@ -121,7 +121,7 @@ if (Meteor.isServer && Videos.find().count() < 12) {
         title: 'Test Video 12',
         description: 'im a pinball wizard or something. boobs.',
         createdAt: new Date(),
-        username: 'maggie',
+        username: 'siobhan',
         likes: Math.floor((Math.random() * 10) + 1),
         comments: 0
     });
