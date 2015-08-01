@@ -42,7 +42,16 @@
                 <div class="card-action valign-wrapper">
                     <span class="left valign">by: <a href="/users/{{username}}">{{username}}</a></span>
 
-                    <span class="badge valign right">{{comments}}<i class="new-comments-badges tiny material-icons">comment</i>{{likes}}<i class="new-comments-badges tiny material-icons">thumb_up</i></span>
+                    <span class="badge valign right">
+                        {{comments}}<i class="new-comments-badges tiny material-icons">comment</i>
+                        {{#if currentUser}}
+                            <button class="addLikeButton waves-light" type="submit">
+                        {{likes}}<i class="new-comments-badges tiny material-icons">thumb_up</i>
+                            </button>
+                            {{else}}
+                            {{likes}}<i class="new-comments-badges tiny material-icons">thumb_up</i>
+                        {{/if}}
+                    </span>
                 </div>
             </div>
         </div>
@@ -50,8 +59,7 @@
 
     {{#if currentUser}}
         <div class="row">
-            <button class="right col offset-8 s4 createComment background-primary waves-effect waves-light btn"
-                    type="submit">New Comment
+            <button class="right col offset-8 s4 createComment background-primary waves-effect waves-light btn" type="submit">New Comment
             </button>
         </div>
     {{/if}}

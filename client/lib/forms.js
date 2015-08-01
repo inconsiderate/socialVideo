@@ -65,7 +65,7 @@ Template.smallVideoCard.events({
                             console.log(data);
                             Materialize.toast("Video deleted!", 4000);
                         } else {
-                            Materialize.toast('Your video was deleted from our server, but the link was not from the local host. Rest assured that the video is actually gone. This problem is being investigated.', 6000);
+                            Materialize.toast('Your video was deleted from our server, but the link was not removed from the local host. The video is actually gone, and the problem is being investigated.', 6000);
                         }
                     });
                 } else {
@@ -73,7 +73,7 @@ Template.smallVideoCard.events({
                 }
             });
         } else {
-            Materialize.toast("You don't have permission to delete this file. How did you get in here, anyway? HAX0R ALERT", 6000);
+            Materialize.toast("You don't have permission to delete this file. How did you get in here, anyway?", 6000);
         }
         event.target.videoid.value = "";
         event.preventDefault();

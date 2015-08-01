@@ -32,6 +32,14 @@ Template.videoLanding.helpers({
 });
 
 Template.videoLanding.events({
+    "click .addLikeButton": function(event){
+        console.log(Meteor.user().username);
+        console.log(this._id);
+        // add this video to the list of "liked" videos tied to user_id
+    }
+});
+
+Template.videoLanding.events({
     "click .createComment": function(){
         $('#newCommentModal').openModal();
     }

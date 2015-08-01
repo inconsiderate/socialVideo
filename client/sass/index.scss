@@ -52,8 +52,18 @@ span .new-comments-badges {
     color: $background-color-primary;
 }
 
-.input-field label {
-    color: $background-color-primary;
+.input-field {
+    label {
+        color: $background-color-primary;
+    }
+    .prefix.active {
+        color: $font-color-primary;
+    }
+}
+
+input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid $button-color;
+    box-shadow: 0 1px 0 0 $button-color;
 }
 
 nav.submenu-tabs {
@@ -65,10 +75,23 @@ a {
     color: #0D47A1;
 }
 
+.addLikeButton {
+    background-color: transparent;
+    border: none;
+}
+
+.switch label input[type=checkbox]:checked + .lever {
+    background-color: $button-color;
+    &:after {
+        background-color: $background-color-primary;
+
+    }
+}
+
+//gif that plays while videos are loading
 video.loading {
     background: white url("/images/loading.gif") center center no-repeat;
 }
-
 video.loaded {
     background: white url("/images/play.gif") center center no-repeat;
 }

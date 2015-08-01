@@ -21,7 +21,7 @@
 
 <template name="smallVideoCard">
     <div class="row">
-        <video id="{{_id}}" class="left col s4 video-js vjs-default-skin" preload="none" height="100%" width="50%">
+        <video id="{{_id}}" class="left col s4 video-js vjs-default-skin" preload="metadata" height="100%" width="50%">
             <source src="{{path}}"/>
         </video>
     <a href="/videos/{{_id}}" class="col s8 collection-item">
