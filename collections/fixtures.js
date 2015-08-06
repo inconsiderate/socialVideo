@@ -1,6 +1,6 @@
 
 
-if (Meteor.isServer && Videos.find().count() < 12) {
+if (Meteor.isServer && Videos.find().count() < 50) {
     Videos.remove({});
     VideoComments.remove({});
     UserProfileComments.remove({});
@@ -61,7 +61,7 @@ if (Meteor.isServer && Videos.find().count() < 12) {
         title: 'Test Video 6',
         description: 'Is this a generic message? Yes. It probably is. But I only have to write it once.',
         createdAt: new Date(),
-        username: 'siobhan',
+        username: 'new maggie',
         likes: Math.floor((Math.random() * 10) + 1),
         comments: 0
     });
@@ -71,7 +71,7 @@ if (Meteor.isServer && Videos.find().count() < 12) {
         title: 'Test Video 7',
         description: 'boobs. that is all.',
         createdAt: new Date(),
-        username: 'other maggie',
+        username: 'old maggie',
         likes: Math.floor((Math.random() * 10) + 1),
         comments: 0
     });
@@ -91,7 +91,7 @@ if (Meteor.isServer && Videos.find().count() < 12) {
         title: 'Test Video 9',
         description: 'im a pinball wizard or something. boobs.',
         createdAt: new Date(),
-        username: 'other maggie',
+        username: 'old maggie',
         likes: Math.floor((Math.random() * 10) + 1),
         comments: 0
     });
@@ -101,7 +101,7 @@ if (Meteor.isServer && Videos.find().count() < 12) {
         title: 'Test Video 10',
         description: 'im a pinball wizard or something. boobs.',
         createdAt: new Date(),
-        username: 'maggie',
+        username: 'mike',
         likes: Math.floor((Math.random() * 10) + 1),
         comments: 0
     });
@@ -121,7 +121,7 @@ if (Meteor.isServer && Videos.find().count() < 12) {
         title: 'Test Video 12',
         description: 'im a pinball wizard or something. boobs.',
         createdAt: new Date(),
-        username: 'siobhan',
+        username: 'andrew',
         likes: Math.floor((Math.random() * 10) + 1),
         comments: 0
     });
