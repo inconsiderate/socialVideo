@@ -22,11 +22,11 @@ span .new-comments-badges {
 }
 
 .text-secondary {
-    color: $background-color-primary;
+    color: $background-color-bold;
 }
 
 .background-primary {
-    background-color: $background-color-primary;
+    background-color: $background-color-bold;
 }
 
 .videoContainer {
@@ -40,7 +40,7 @@ span .new-comments-badges {
 }
 
 .indicator {
-    background-color: $background-color-primary;
+    background-color: $background-color-bold;
 }
 
 #right-navbar {
@@ -49,12 +49,12 @@ span .new-comments-badges {
 
 .btn {
     background-color: $button-color;
-    color: $background-color-primary;
+    color: $background-color-bold;
 }
 
 .input-field {
     label {
-        color: $background-color-primary;
+        color: $background-color-bold;
     }
     .prefix.active {
         color: $font-color-primary;
@@ -83,7 +83,7 @@ a {
 .switch label input[type=checkbox]:checked + .lever {
     background-color: $button-color;
     &:after {
-        background-color: $background-color-primary;
+        background-color: $background-color-bold;
 
     }
 }
