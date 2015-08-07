@@ -1,6 +1,8 @@
 
 
-if (Meteor.isServer && Videos.find().count() < 50) {
+if (Meteor.isServer
+    //&& Videos.find().count() < 50
+) {
     Videos.remove({});
     VideoComments.remove({});
     UserProfileComments.remove({});
@@ -41,7 +43,7 @@ if (Meteor.isServer && Videos.find().count() < 50) {
         title: 'Test Video 4',
         description: 'im a pinball wizard or something. boobs.',
         createdAt: new Date(),
-        username: 'maggie',
+        username: 'new maggie',
         likes: Math.floor((Math.random() * 10) + 1),
         comments: 0
     });
@@ -99,7 +101,7 @@ if (Meteor.isServer && Videos.find().count() < 50) {
     Videos.insert({
         path: 'http://s3.amazonaws.com/daddyissues/testvideos/df021166-e36d-424a-b4d5-4500352dd046.mp4',
         title: 'Test Video 10',
-        description: 'im a pinball wizard or something. boobs.',
+        description: 'What is going on in this video? This isnt even lego, its some sort of kinex thing or something. Right? Its something like that. I dont even actually know to be honest. Its freaking me out. And is that a hand? Is that a child!? What the hell even.',
         createdAt: new Date(),
         username: 'mike',
         likes: Math.floor((Math.random() * 10) + 1),
@@ -109,7 +111,7 @@ if (Meteor.isServer && Videos.find().count() < 50) {
     Videos.insert({
         path: 'http://s3.amazonaws.com/daddyissues/testvideos/df021166-e36d-424a-b4d5-4500352dd046.mp4',
         title: 'Test Video 11',
-        description: 'im a pinball wizard or something. boobs.',
+        description: 'boobs.',
         createdAt: new Date(),
         username: 'tom',
         likes: Math.floor((Math.random() * 10) + 1),
