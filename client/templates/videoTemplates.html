@@ -62,6 +62,11 @@
             <button class="right col offset-8 s4 createComment background-primary waves-effect waves-light btn" type="submit">New Comment
             </button>
         </div>
+        {{else}}
+        <div class="row">
+            <button class="right col offset-8 s4 login-modal background-primary waves-effect waves-light btn" type="submit">New Comment
+            </button>
+        </div>
     {{/if}}
     <div class="commentContainer row">
         {{#each allComments}}
