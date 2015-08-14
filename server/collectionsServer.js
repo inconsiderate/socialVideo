@@ -45,6 +45,16 @@ Meteor.methods({
 
     },
 
+    addLikeToVideo: function (videoid, userid) {
+        var video = Videos.findOne({_id: videoid});
+        console.log(video);
+        console.log(userid);
+        Videos.update(videoid, {
+            $inc: {likes: 1}
+        });
+        //TODO: add video to list of 'videos this user has liked'
+    },
+
     insertVideoComment: function (videoid, content) {
         VideoComments.insert({
             videoid: videoid,

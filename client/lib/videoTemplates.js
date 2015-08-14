@@ -33,8 +33,7 @@ Template.videoLanding.helpers({
 
 Template.videoLanding.events({
     "click .addLikeButton": function(event){
-        console.log(Meteor.user().username);
-        console.log(this._id);
+        Meteor.call('addLikeToVideo', this._id, Meteor.user().username);
         // add this video to the list of "liked" videos tied to user_id
     },
     "click .login-modal": function () {
