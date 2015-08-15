@@ -14,35 +14,26 @@ Videos._ensureIndex( { "$**": "text" } );
 
 Meteor.methods({
     insertVideo: function (title, desc, url) {
-        var userIP = this.connection.clientAddress
+        var userIP = this.connection.clientAddress;
         Videos.insert({
             title: title,
             path: url,
-            //keywords: keywords,
             description: desc,
             createdAt: new Date(),
-            owner: Meteor.userId(),
-            username: Meteor.user().username,
+            uploaderID: Meteor.userId(),
             comments: 0,
-            likes: 0
+            likes: 0,
+            uploadedFromIP: userIP
         });
-        Meteor.users.update({_id:Meteor.user()._id},
-            {$set:
-                {"profile.ip": userIP}
-            }
-        );
     },
     deleteVideo: function (videoid) {
-
         Videos.remove({
             _id: videoid
         });
         VideoComments.remove({
             videoid: videoid
         });
-
         return 'video deleted';
-
     },
 
     addLikeToVideo: function (videoid, userid) {

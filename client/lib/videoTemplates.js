@@ -28,6 +28,9 @@ Template.videosRandom.helpers({
 Template.videoLanding.helpers({
     allComments: function() {
         return VideoComments.find({videoid: this._id}, {sort: {creatvedAt: -1}});
+    },
+    uploaderUsername: function() {
+        return Meteor.user(this.uploaderID).username;
     }
 });
 

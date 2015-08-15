@@ -10,7 +10,22 @@ Template.searchForm.events({
 
 Template.editUserProfile.events({
     "submit .edit-user-form": function (event) {
-        //TODO: allow users to change username and other profile settings form the user landing page.
+        var username = event.target.user_name.value,
+            gender = event.target.user_gender.value,
+            age = event.target.user_age.value,
+            something = event.target.user_something.value,
+            usermessages = event.target.user_messages_toggle.value,
+            emailnotifications = event.target.email_notifications_toggle.value;
+
+        Meteor.users.update({_id:Meteor.user()._id}, {
+            $set: {
+                "profile.username": username,
+                "profile.gender": gender,
+                "profile.age": age,
+                "profile.usermessages": usermessages,
+                "profile.emailnotifications": emailnotifications
+            }
+        });
     }
 });
 
@@ -22,9 +37,9 @@ Template.submitNewVideo.helpers({
 
 Template.submitNewVideo.events({
     "submit .submit-video-form": function (event) {
-        var files = $("#file_bucket")[0].files;
-        var title = event.target.video_title.value;
-        var desc = event.target.video_description.value;
+        var files = $("#file_bucket")[0].files,
+        title = event.target.video_title.value,
+        desc = event.target.video_description.value;
 
         S3.upload({
             files: files,
