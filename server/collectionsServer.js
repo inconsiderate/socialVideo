@@ -13,6 +13,7 @@ Meteor.publish("publicUserData", function () {
 Videos._ensureIndex( { "$**": "text" } );
 
 Meteor.methods({
+
     insertVideo: function (title, desc, url) {
         var userIP = this.connection.clientAddress;
         Videos.insert({
@@ -51,8 +52,7 @@ Meteor.methods({
             videoid: videoid,
             content: content,
             createdAt: new Date(),
-            owner: Meteor.userId(),
-            username: Meteor.user().username
+            userID: Meteor.userId()
         });
         Videos.update(videoid, {
             $inc: {comments: 1}

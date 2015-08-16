@@ -171,14 +171,62 @@ if (Meteor.isServer) {
         });
     }
 
-    if (VideoComments.find().count() < 2) {
+    if (VideoComments.find().count() < 9) {
         VideoComments.remove({});
 
         VideoComments.insert({
             videoid: Videos.findOne({title: 'Test Video 1'})._id,
             content: 'This is an example of a video comment!',
             createdAt: new Date(),
-            commenterID: Meteor.users.findOne({username: 'alice'})._id
+            userID: Meteor.users.findOne({username: 'alice'})._id
+        });
+        VideoComments.insert({
+            videoid: Videos.findOne({title: 'Test Video 2'})._id,
+            content: 'This is an example of a video comment!',
+            createdAt: new Date(),
+            userID: Meteor.users.findOne({username: 'andrew'})._id
+        });
+        VideoComments.insert({
+            videoid: Videos.findOne({title: 'Test Video 3'})._id,
+            content: 'This is an example of a video comment!',
+            createdAt: new Date(),
+            userID: Meteor.users.findOne({username: 'mike'})._id
+        });
+        VideoComments.insert({
+            videoid: Videos.findOne({title: 'Test Video 4'})._id,
+            content: 'This is the first comment on this video',
+            createdAt: new Date(),
+            userID: Meteor.users.findOne({username: 'alice'})._id
+        });
+        VideoComments.insert({
+            videoid: Videos.findOne({title: 'Test Video 4'})._id,
+            content: 'This is the second comment on this video!',
+            createdAt: new Date(),
+            userID: Meteor.users.findOne({username: 'andrew'})._id
+        });
+        VideoComments.insert({
+            videoid: Videos.findOne({title: 'Test Video 4'})._id,
+            content: 'This is the third comment on this video!',
+            createdAt: new Date(),
+            userID: Meteor.users.findOne({username: 'mike'})._id
+        });
+        VideoComments.insert({
+            videoid: Videos.findOne({title: 'Test Video 4'})._id,
+            content: 'This is the fourth comment on this video',
+            createdAt: new Date(),
+            userID: Meteor.users.findOne({username: 'alice'})._id
+        });
+        VideoComments.insert({
+            videoid: Videos.findOne({title: 'Test Video 4'})._id,
+            content: 'MOAR COMMENTS',
+            createdAt: new Date(),
+            userID: Meteor.users.findOne({username: 'alice'})._id
+        });
+        VideoComments.insert({
+            videoid: Videos.findOne({title: 'Test Video 4'})._id,
+            content: "This is a MAX CHARACTERS comment. It uses the maximum amount of allowed character. Four hundred! That's a lot. Like, seven more than three hundred and three. Yup. That's math. We're good at math over here. This fixture is long and boring to type out.... Maybe I'll just copy and paste something. This fixture is long and boring to type out.... Maybe I'll just copy and paste something. This fixture..",
+            createdAt: new Date(),
+            userID: Meteor.users.findOne({username: 'alice'})._id
         });
     }
 }

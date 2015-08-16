@@ -1,23 +1,5 @@
 if (Meteor.isClient) {
 
-    Template.userLanding.helpers({
-        myVideos: function () {
-            return Videos.find({username: this.username});
-        }
-    });
-
-    Template.userVideos.helpers({
-        myVideos: function () {
-            return Videos.find({username: Meteor.user().username});
-        }
-    });
-
-    Template.userProfile.helpers({
-        myComments: function() {
-            return VideoComments.find({userid: this._id});
-        }
-    });
-
     Template.navbar.events({
         "click .login-modal": function () {
             $('.video-js').bind('contextmenu',function() { return false; });
@@ -37,8 +19,10 @@ if (Meteor.isClient) {
         }
     });
 
-    Template.registerHelper('equals', function (a, b) {
-        return a === b;
-    });
+    Template.singleComment.helpers({
+        commenterUsername: function() {
+            return Meteor.users.findOne({_id: this.uploaderID}).username;
+        }
+    })
 
 }

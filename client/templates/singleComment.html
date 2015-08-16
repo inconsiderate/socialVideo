@@ -3,18 +3,18 @@
 
     <div class="valign-wrapper row">
         <div class="center col s2 valign">
-            <a href="/users/{{username}}"><img src="http://31.media.tumblr.com/avatar_1179596bebbb_64.png"></a>
+            <a href="/users/{{userID}}"><img src="http://31.media.tumblr.com/avatar_1179596bebbb_64.png"></a>
         </div>
 
         <div class="col s10 valign">
             <div class="card-panel hoverable flow-text white">
-                <a href="/users/{{username}}"><span class="text-primary left">{{username}}</span></a>
+                <a href="/users/{{userID}}"><span class="text-primary left">{{commenterUsername}}</span></a>
                 <span class="right">{{createdAt}}</span>
                 <br>
           <blockquote class="">{{content}}
           </blockquote>
             </div>
-            {{#if equals username currentUser.username}}
+            {{#if equals uploaderUsername currentUser.username}}
                 <form class="col s12 delete-comment-form">
                     <input type="hidden" id="commentid" value="{{_id}}"/>
                     <div class="input-field col s12 right">

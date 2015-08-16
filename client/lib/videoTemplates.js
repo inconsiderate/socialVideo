@@ -25,18 +25,24 @@ Template.videosRandom.helpers({
     }
 });
 
+Template.singleVideo.helpers({
+    uploaderUsername: function() {
+        return Meteor.users.findOne({_id: this.uploaderID}).username;
+    }
+});
+
 Template.videoLanding.helpers({
     allComments: function() {
-        return VideoComments.find({videoid: this._id}, {sort: {creatvedAt: -1}});
+        return VideoComments.find({videoid: this._id}, {sort: {createdAt: -1}});
     },
     uploaderUsername: function() {
-        return Meteor.user(this.uploaderID).username;
+        return Meteor.users.findOne({_id: this.uploaderID}).username;
     }
 });
 
 Template.videoLanding.events({
     "click .addLikeButton": function(event){
-        Meteor.call('addLikeToVideo', this._id, Meteor.user().username);
+        Meteor.call('addLikeToVideo', this._id, Meteor.user().profile.username);
         // add this video to the list of "liked" videos tied to user_id
     },
     "click .login-modal": function () {
