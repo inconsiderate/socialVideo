@@ -1,51 +1,49 @@
 <template name="navbar">
     <div class="navbar-fixed">
-        <nav>
-            <div class="hoverable nav-wrapper background-primary">
-                <a href="/" class="text-primary brand-logo center hide-on-med-and-down">social video</a>
-
-                <a href="#" data-activates="slide-out" class="button-collapse"><i class="text-primary material-icons">menu</i></a>
+        <nav class="hoverable nav-wrapper background-primary">
+            <a href="/" class="text-primary brand-logo center hide-on-med-and-down">social video</a>
+            <a href="#" data-activates="slide-out" class="button-collapse"><i
+                    class="text-primary material-icons">menu</i></a>
+            <ul id="right-navbar" class="right hide-on-med-and-down">
+                <li><a class="text-primary" href="/legal">legal</a></li>
+                <li><a class="text-primary" href="/aboutus">about us</a></li>
+                <button class="login-modal waves-effect waves-light btn">
+                    {{#if currentUser}} my account
+                    {{else}}
+                        sign in
+                    {{/if}}
+                </button>
+            </ul>
+            <ul class="right hide-on-large-only">
+                <button class="login-modal waves-effect waves-light btn">
+                    {{#if currentUser}} account
+                    {{else}}
+                        log in
+                    {{/if}}
+                </button>
+                <a href="#" class="text-primary left hide-on-large-only">social video</a>
+            </ul>
+            <ul class="side-nav" id="slide-out">
                 <ul class="left">
                     {{>searchForm}}
                 </ul>
-                <ul id="right-navbar" class="right hide-on-med-and-down">
-                    <li><a class="text-primary" href="/legal">legal</a></li>
-                    <li><a class="text-primary" href="/aboutus">about us</a></li>
-                    <button class="login-modal waves-effect waves-light btn">
-                        {{#if currentUser}} my account
-                        {{else}}
-                            sign in
-                        {{/if}}
-                    </button>
-                </ul>
-                <ul class="right hide-on-large-only">
-                    <button class="login-modal waves-effect waves-light btn">
-                        {{#if currentUser}} my account
-                        {{else}}
-                            sign in
-                        {{/if}}
-                    </button>
-                    <a href="#" class="text-primary left hide-on-large-only">daddy issues</a>
-                </ul>
-                <ul class="side-nav" id="slide-out">
-                    <li><a href="#filter1">Filter 1</a></li>
-                    <li><a href="#filter2">Filter 2</a></li>
-                    <li><a href="#filter3">Filter 3</a></li>
-                    <li><a href="#filter4">Filter 4</a></li>
-                    <li><a href="#filter2">Filter 2</a></li>
-                    <li><a href="#filter3">Filter 3</a></li>
-                    <li><a href="#filter4">Filter 4</a></li>
-                    <li><a href="#filter2">Filter 2</a></li>
-                    <li><a href="#filter3">Filter 3</a></li>
-                    <li><a href="#filter4">Filter 4</a></li>
-                    <li class="divider"></li>
-                    <li><a href="/legal">Legal</a></li>
-                    <li><a href="/aboutus">About Us</a></li>
-                </ul>
-            </div>
+                <li><a href="#filter1">Filter 1</a></li>
+                <li><a href="#filter2">Filter 2</a></li>
+                <li><a href="#filter3">Filter 3</a></li>
+                <li><a href="#filter4">Filter 4</a></li>
+                <li><a href="#filter5">Filter 5</a></li>
+                <li><a href="#filter6">Filter 6</a></li>
+                <li><a href="#filter7">Filter 7</a></li>
+                <li><a href="#filter8">Filter 8</a></li>
+                <li><a href="#filter9">Filter 9</a></li>
+                <li class="divider"></li>
+                <li><a href="/legal">Legal</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+            </ul>
         </nav>
     </div>
 </template>
+
 
 <template name="searchForm">
     <form class="search-field-form">
@@ -55,6 +53,7 @@
         </div>
     </form>
 </template>
+
 
 <template name="navbar2">
     <div class="hide-on-med-and-down nav-wrapper white">
