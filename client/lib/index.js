@@ -18,11 +18,4 @@ if (Meteor.isClient) {
             $('#user-account-modal').openModal();
         }
     });
-
-    Template.singleComment.helpers({
-        commenterUsername: function() {
-            return Meteor.users.findOne({_id: this.userID}).username;
-        }
-    })
-
 }

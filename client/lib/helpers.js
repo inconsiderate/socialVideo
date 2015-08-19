@@ -4,4 +4,9 @@ if (Meteor.isClient) {
         return a === b;
     });
 
+    Template.body.helpers({
+        uploaderUsername: function() {
+            return Meteor.users.findOne({_id: this.uploaderID}).profile.username;
+        }
+    });
 }

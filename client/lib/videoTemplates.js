@@ -25,18 +25,9 @@ Template.videosRandom.helpers({
     }
 });
 
-Template.singleVideo.helpers({
-    uploaderUsername: function() {
-        return Meteor.users.findOne({_id: this.uploaderID}).username;
-    }
-});
-
 Template.videoLanding.helpers({
     allComments: function() {
         return VideoComments.find({videoid: this._id}, {sort: {createdAt: -1}});
-    },
-    uploaderUsername: function() {
-        return Meteor.users.findOne({_id: this.uploaderID}).username;
     }
 });
 
