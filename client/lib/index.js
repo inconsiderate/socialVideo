@@ -21,7 +21,7 @@ if (Meteor.isClient) {
 
     Template.singleComment.helpers({
         commenterUsername: function() {
-            return Meteor.users.findOne({_id: this.uploaderID}).username;
+            return Meteor.users.findOne({_id: this.userID}).username;
         }
     })
 
