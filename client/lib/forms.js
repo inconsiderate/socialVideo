@@ -13,7 +13,7 @@ Template.editUserProfile.events({
         var username = event.target.user_name.value,
             gender = event.target.user_gender.value,
             age = event.target.user_age.value,
-            something = event.target.user_something.value,
+            single = event.target.user_relationship.value,
             usermessages = event.target.user_messages_toggle.value,
             emailnotifications = event.target.email_notifications_toggle.value;
 
@@ -23,7 +23,8 @@ Template.editUserProfile.events({
                 "profile.gender": gender,
                 "profile.age": age,
                 "profile.usermessages": usermessages,
-                "profile.emailnotifications": emailnotifications
+                "profile.emailnotifications": emailnotifications,
+                "profile.single": single
             }
         });
     }
