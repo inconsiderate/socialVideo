@@ -1,18 +1,30 @@
 <template name="userLanding">
     <div class="flow-text">
-        <h4>username: {{this.username}}</h4>
-        <ul class="collection with-header">
-            <li class="collection-header">{{username}}'s uploads:</li>
-            <li class="collection-item">
-                {{#each myVideos}}
-                    {{> smallVideoCard}}
-                {{/each}}</li>
-            <li class="collection-item">{{username}}'s favorites: in progress</li>
-            <li class="collection-item">groups they belong to?</li>
-        </ul>
+        <h2>{{profile.username}}</h2>
+        <div class="row">
 
-        <br>
-        <p>Send this user a message?</p>
+            <div class="left col s6">
+                <ul class="collection with-header">
+                    <li class="collection-header">Profile Info</li>
+
+                    <li class="collection-item">gender identity: {{profile.gender_identity}}</li>
+                    <li class="collection-item">age: {{profile.age}}</li>
+                    <li class="collection-item">single: {{profile.single}}</li>
+                    <li class="divider"></li>
+                    <li class="collection-item">{{profile.username}}'s favorites: in progress</li>
+                    <li class="collection-item">groups {{profile.username}} belongs to: in progress</li>
+                    <li class="collection-item">send {{profile.username}} a message: in progress</li>
+                </ul>
+            </div>
+
+            <ul class="collection with-header right col s6">
+                <li class="collection-header">{{profile.username}}'s uploads:</li>
+                <li class="collection-item">
+                    {{#each myVideos}}
+                        {{> smallVideoCard}}
+                    {{/each}}</li>
+            </ul>
+        </div>
     </div>
 </template>
 

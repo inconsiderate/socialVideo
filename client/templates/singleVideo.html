@@ -32,11 +32,13 @@
             <span class="badge valign right">{{comments}}<i class="new-comments-badges tiny material-icons">comment</i>{{likes}}<i class="new-comments-badges tiny material-icons">thumb_up</i></span><br>
         </div>
     </a>
+    {{#if equals uploaderUsername currentUser.username}}
         <form class="col s12 delete-video-form">
             <input type="hidden" id="videoid" value="{{_id}}"/>
             <div class="input-field col s12 right">
                 <button class="right background-primary waves-effect waves-light btn" type="submit">delete</button>
             </div>
         </form>
+    {{/if}}
 </div>
 </template>

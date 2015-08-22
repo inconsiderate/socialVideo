@@ -2,7 +2,7 @@ if (Meteor.isClient) {
 
     Template.userLanding.helpers({
         myVideos: function () {
-            return Videos.find({uploaderID: this.profile.username});
+            return Videos.find({uploaderID: this._id});
         }
     });
 

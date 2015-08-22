@@ -5,9 +5,7 @@
 //});
 
 Meteor.publish("publicUserData", function () {
-    return Meteor.users.find({}, {fields: {
-        'username': 1
-    }});
+    return Meteor.users.find({});
 });
 
 Videos._ensureIndex( { "$**": "text" } );
@@ -52,7 +50,7 @@ Meteor.methods({
             videoid: videoid,
             content: content,
             createdAt: new Date(),
-            userID: Meteor.userId()
+            commenterID: Meteor.userId()
         });
         Videos.update(videoid, {
             $inc: {comments: 1}
