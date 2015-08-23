@@ -12,13 +12,13 @@
 
     <div class="flow-text">
         <br>
-        <strong>Hello, {{currentUser.username}}!</strong>
+        <strong>Hello, {{currentUser.profile.username}}!</strong>
         <br>
 
         <p>There's not much here yet, but we're working on it. Right now we're focusing on the videos, and not really
             worrying about the social stuff too much. Suggestions on how we could improve or implement things are
             welcome!</p>
 
-        <a href="/users/{{currentUser.username}}">How Others See Your Profile</a>
+        <a href="/users/{{currentUser._id}}">How Others See Your Profile</a>
     </div>
 </template>
