@@ -1,8 +1,12 @@
 
-//Meteor.publish("userData", function () {
-//    return Meteor.users.find({_id: this.userId},
-//        {fields: {'other': 1, 'things': 1}});
-//});
+contains = function (a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+};
 
 Meteor.publish("publicUserData", function () {
     return Meteor.users.find({});
@@ -35,14 +39,28 @@ Meteor.methods({
         return 'video deleted';
     },
 
-    addLikeToVideo: function (videoid, userid) {
+    likeVideoButton: function (videoid, userid) {
         var video = Videos.findOne({_id: videoid});
-        console.log(video);
-        console.log(userid);
-        Videos.update(videoid, {
-            $inc: {likes: 1}
-        });
-        //TODO: add video to list of 'videos this user has liked'
+        var user = Meteor.user();
+        if (user.profile.likedVideos && contains (user.profile.likedVideos, videoid)) {
+            Videos.update(videoid, {
+                $inc: {likes: -1}
+            });
+            Meteor.users.update({_id:Meteor.user()._id}, {
+                $pull: {
+                    "profile.likedVideos": videoid
+                }
+            })
+        } else {
+            Videos.update(videoid, {
+                $inc: {likes: 1}
+            });
+            Meteor.users.update({_id:Meteor.user()._id}, {
+                $push: {
+                    "profile.likedVideos": videoid
+                }
+            })
+        }
     },
 
     insertVideoComment: function (videoid, content) {

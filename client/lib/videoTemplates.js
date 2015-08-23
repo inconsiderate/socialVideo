@@ -32,17 +32,13 @@ Template.videoLanding.helpers({
 });
 
 Template.videoLanding.events({
-    "click .addLikeButton": function(event){
-        Meteor.call('addLikeToVideo', this._id, Meteor.user().profile.username);
-        // add this video to the list of "liked" videos tied to user_id
+    "click .likeButton": function(event){
+        Meteor.call('likeVideoButton', this._id, Meteor.user().profile.username);
     },
     "click .login-modal": function () {
         $('#user-account-modal').openModal();
         $('#user-navbar').tabs();
-    }
-});
-
-Template.videoLanding.events({
+    },
     "click .createComment": function(){
         $('#newCommentModal').openModal();
     }
