@@ -14,7 +14,7 @@
           <blockquote class="">{{content}}
           </blockquote>
             </div>
-            {{#if equals uploaderUsername currentUser.username}}
+            {{#if equals commenterUsername currentUser.username}}
                 <form class="col s12 delete-comment-form">
                     <input type="hidden" id="commentid" value="{{_id}}"/>
                     <div class="input-field col s12 right">

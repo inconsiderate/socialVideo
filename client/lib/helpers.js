@@ -5,12 +5,13 @@ if (Meteor.isClient) {
     });
 
     Template.registerHelper('uploaderUsername', function () {
-        var user = Meteor.users.findOne({_id: this.uploaderID});
-        return user.profile.username;
+        var u = Meteor.users.findOne({_id: this.uploaderID});
+        return u.profile.username;
     });
 
     Template.registerHelper('commenterUsername', function () {
-        var user = Meteor.users.findOne({_id: this.commenterID});
-        return user.profile.username;
+        var u = Meteor.users.findOne({_id: this.commenterID});
+        console.log(u);
+        return u.profile.username;
     });
 }

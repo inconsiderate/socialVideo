@@ -8,10 +8,6 @@ contains = function (a, obj) {
     return false;
 };
 
-Meteor.publish("publicUserData", function () {
-    return Meteor.users.find({});
-});
-
 Videos._ensureIndex( { "$**": "text" } );
 
 Meteor.methods({
@@ -96,6 +92,10 @@ Meteor.publish('videos-current-user', function() {
 
 Meteor.publish('comments', function() {
     return VideoComments.find();
+});
+
+Meteor.publish("publicUserData", function () {
+    return Meteor.users.find({});
 });
 
 //Meteor.publish('video-comments-for-one-user', function(user) {
