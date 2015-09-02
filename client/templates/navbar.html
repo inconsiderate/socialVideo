@@ -1,9 +1,13 @@
 <template name="navbar">
     <div class="navbar-fixed">
         <nav class="hoverable nav-wrapper background-primary">
-            <a href="/" class="text-primary brand-logo center hide-on-med-and-down">daddy issues</a>
-            <a href="#" data-activates="slide-out" class="button-collapse"><i
+            <ul id="left-navbar" class="left hide-on-small-and-down">
+                <li class="slide-out-search-form">{{>searchForm}}</li>
+            </ul>
+            <a href="/" class="text-primary brand-logo center">social video</a>
+            <a href="#" data-activates="slide-out" class="hide-on-med-and-up button-collapse"><i
                     class="text-primary material-icons">menu</i></a>
+
             <ul id="right-navbar" class="right hide-on-med-and-down">
                 <li><a class="text-primary" href="/legal">legal</a></li>
                 <li><a class="text-primary" href="/aboutus">about us</a></li>
@@ -18,12 +22,11 @@
                 <button class="login-modal waves-effect waves-light btn">
                     {{#if currentUser}} account
                     {{else}}
-                        log in
+                        sign in
                     {{/if}}
                 </button>
-                <a href="#" class="text-primary left hide-on-large-only">daddy issues</a>
             </ul>
-            <ul class="side-nav" id="slide-out">
+            <ul class="side-nav hide-on-med-and-up" id="slide-out">
                 <li class="divider"></li>
                 <li class="slide-out-search-form">{{>searchForm}}</li>
                 <li class="divider"></li>
@@ -68,18 +71,4 @@
     <div id="videospopular" class="col s12">{{> videosPopular}}</div>
     <div id="videosrated" class="col s12">{{> videosRated}}</div>
     <div id="videosrandom" class="col s12">{{> videosRandom}}</div>
-</template>
-
-
-<template name="searchNavbar">
-    <div class="nav-wrapper white">
-        <ul class="tabs white row">
-            <li class="col s3 tab"><a class="active" href="#searchVideos">Videos</a></li>
-            <li class="col s3 tab"><a class="" href="#searchImages">Images</a></li>
-            <li class="col s3 tab"><a class="" href="#searchUsers">Users</a></li>
-        </ul>
-    </div>
-    <div id="searchVideos" class="col s12">{{> videosNewest}}</div>
-    <div id="searchImages" class="col s12">{{> videosPopular}}</div>
-    <div id="searchUsers" class="col s12">{{> videosRated}}</div>
 </template>

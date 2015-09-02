@@ -1,8 +1,8 @@
 Template.searchForm.events({
     "submit .search-field-form": function (event) {
         var searchFilter = event.target.searchField.value;
-        //TODO: Create a route here for search results
-        event.target.searchField.value = "";
+        Router.go('search', {}, {hash: searchFilter});
+        event.target.searchField.value = '';
         event.preventDefault();
         return false;
     }
