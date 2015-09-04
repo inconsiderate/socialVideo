@@ -170,60 +170,76 @@ if (Meteor.isServer) {
 
     if (VideoComments.find().count() < 9 && (Meteor.users.find().count() == 3) && (Videos.find().count() == 12)) {
         VideoComments.remove({});
+        var testvideo1 = Videos.findOne({title: 'Test Video 1'})._id,
+            testvideo2 = Videos.findOne({title: 'Test Video 2'})._id,
+            testvideo3 = Videos.findOne({title: 'Test Video 3'})._id,
+            testvideo4 = Videos.findOne({title: 'Test Video 4'})._id;
 
         VideoComments.insert({
-            videoid: Videos.findOne({title: 'Test Video 1'})._id,
+            videoid: testvideo1,
             content: 'This is an example of a video comment!',
             createdAt: new Date(),
             commenterID: alice
         });
         VideoComments.insert({
-            videoid: Videos.findOne({title: 'Test Video 2'})._id,
+            videoid: testvideo2,
             content: 'This is an example of a video comment!',
             createdAt: new Date(),
             commenterID: andrew
         });
         VideoComments.insert({
-            videoid: Videos.findOne({title: 'Test Video 3'})._id,
+            videoid: testvideo3,
             content: 'This is an example of a video comment!',
             createdAt: new Date(),
             commenterID: mike
         });
         VideoComments.insert({
-            videoid: Videos.findOne({title: 'Test Video 4'})._id,
+            videoid: testvideo4,
             content: 'This is the first comment on this video',
             createdAt: new Date(),
             commenterID: alice
         });
         VideoComments.insert({
-            videoid: Videos.findOne({title: 'Test Video 4'})._id,
+            videoid: testvideo4,
             content: 'This is the second comment on this video!',
             createdAt: new Date(),
             commenterID: andrew
         });
         VideoComments.insert({
-            videoid: Videos.findOne({title: 'Test Video 4'})._id,
+            videoid: testvideo4,
             content: 'This is the third comment on this video!',
             createdAt: new Date(),
             commenterID: mike
         });
         VideoComments.insert({
-            videoid: Videos.findOne({title: 'Test Video 4'})._id,
+            videoid: testvideo4,
             content: 'This is the fourth comment on this video',
             createdAt: new Date(),
             commenterID: alice
         });
         VideoComments.insert({
-            videoid: Videos.findOne({title: 'Test Video 4'})._id,
+            videoid: testvideo4,
             content: 'MOAR COMMENTS',
             createdAt: new Date(),
             commenterID: alice
         });
         VideoComments.insert({
-            videoid: Videos.findOne({title: 'Test Video 4'})._id,
+            videoid: testvideo4,
             content: "This is a MAX CHARACTERS comment. It uses the maximum amount of allowed character. Four hundred! That's a lot. Like, seven more than three hundred and three. Yup. That's math. We're good at math over here. This fixture is long and boring to type out.... Maybe I'll just copy and paste something. This fixture is long and boring to type out.... Maybe I'll just copy and paste something. This fixture..",
             createdAt: new Date(),
             commenterID: alice
+        });
+        Videos.update(testvideo1, {
+            $inc: {comments: 1}
+        });
+        Videos.update(testvideo2, {
+            $inc: {comments: 1}
+        });
+        Videos.update(testvideo3, {
+            $inc: {comments: 1}
+        });
+        Videos.update(testvideo4, {
+            $inc: {comments: 6}
         });
     }
 }
