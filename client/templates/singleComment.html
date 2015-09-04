@@ -1,29 +1,22 @@
 
 <template name="singleComment">
-
     <div class="valign-wrapper row">
         <div class="center col s2 valign">
-            <a href="/users/{{commenterID}}"><img src="http://31.media.tumblr.com/avatar_1179596bebbb_64.png"></a>
+            <a href="/users/{{commenterID}}"><img class="circle responsive-img" src="http://31.media.tumblr.com/avatar_1179596bebbb_64.png"></a>
         </div>
-
         <div class="col s10 valign">
             <div class="card-panel hoverable flow-text white">
                 <a href="/users/{{commenterID}}"><span class="text-primary left">{{commenterUsername}}</span></a>
-                <span class="right">{{createdAt}}</span>
+                {{#if equals commenterID currentUser._id}}
+                    <form class="delete-comment-form">
+                        <input type="hidden" id="commentid" value="{{_id}}"/>
+                        <button class="right waves-effect waves-light btn-flat" type="submit">delete</button>
+                    </form>
+                {{/if}}
                 <br>
-          <blockquote class="">{{content}}
-          </blockquote>
+              <blockquote>{{content}}</blockquote>
+            <span style="font-size: 11px;" class="right">{{createdAt}}</span>
             </div>
-            {{#if equals commenterUsername currentUser.username}}
-                <form class="col s12 delete-comment-form">
-                    <input type="hidden" id="commentid" value="{{_id}}"/>
-                    <div class="input-field col s12 right">
-                        <button class="right background-primary waves-effect waves-light btn" type="submit">delete</button>
-                    </div>
-                </form>
-
-            {{/if}}
         </div>
     </div>
-
 </template>

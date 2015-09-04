@@ -34,9 +34,7 @@ Meteor.methods({
         });
         return 'video deleted';
     },
-
     likeVideoButton: function (videoid, userid) {
-        var video = Videos.findOne({_id: videoid});
         var user = Meteor.user();
         if (user.profile.likedVideos && contains (user.profile.likedVideos, videoid)) {
             Videos.update(videoid, {
